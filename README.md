@@ -3,7 +3,7 @@
 - **Task 0 Due: Friday March 20, 11:59pm**
 - **Task 1&2 Due: Friday April 3, 11:59pm**
 
-##### Project Topics: Mobile to Cloud application
+#### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
 - Task 0 involves researching, selecting, and demonstrating using a 3rd party API that you will use in Task 1&2, and writing and reading from a nosql-database-as-a-service.
@@ -12,7 +12,7 @@ This project has 3 tasks:
 
 When completing these tasks, the student should reflect on synchronous and asynchronous calls, event handling, remote interfaces, mobile and cloud computing.
 
-##### Task 0 Demonstrate using a 3rd Party API and MongoDB-as-a-Service
+#### Task 0 Demonstrate using a 3rd Party API and MongoDB-as-a-Service
 
 Research and choose a 3rd party API to use in Task 1 and 2.  Be sure to read Task 1 carefully to see how you will use the API, and to understand what APIs cannot be used.
 In detail, you should satisfy the following requirements:
