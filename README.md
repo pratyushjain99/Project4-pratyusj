@@ -61,11 +61,11 @@ The application must be of your own creative design.  It can be simple, but shou
 
 Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 we experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is [ProgrammableWeb](http://www.programmableweb.com/apis/directory).
 
-Use APIs that require authentication with caution. Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
+**Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
-Be sure your API is from a reputable source.   Make sure you do not base your project on an API built by a 7th grade student…
+**Be sure your API is from a reputable source.**   Make sure you do not base your project on an API built by a 7th grade student…
 
-Banned APIs: There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore you cannot use any of the following:
+**Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
 - Any weather API
 - Flickr (for we have already done that)
 - Spotify
@@ -75,14 +75,9 @@ Banned APIs: There are a number of APIs that have been used too often and are no
 -	Yahoo Finance API
 -	Yelp
 
-Users will access your application via a native Android application.  You do not need to have a browser-based interface for your application (only for the Task 2 dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Task 2 dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
 In detail, your application should satisfy the following requirements:
-
-1. x
- 1. y
-  1. z
-
 
 **1.	Implement a native Android application**  
 a.	Has at least three different kinds of views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View).  
@@ -92,21 +87,25 @@ d.	Receives and parses an XML or JSON formatted reply from your web service
 e.	Displays new information to the user  
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
-2.	Implement a web service, deployed to Heroku
-2.1.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do not try to use JAX-RS / Jersey.)
-2.2.	Receives an HTTP request from the native Android application
-2.3.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
-	-10 if you use a banned API
-	-10 if screen scrape instead of fetching XML or JSON via a published API
-2.4.	Replies to the Android application with an XML or JSON formatted response.
-The schema of the response can be of your own design.
-Alternatively, you can adopt a standard schema that is appropriate to your application. (E.g. Common Alerting Protocol if your application deals with emergency alerts.)
-	-5 if information beyond what is needed is passed on to the Android app, forcing the mobile app to do more computing than is necessary.
+**2.	Implement a web service, deployed to Heroku**  
+a.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do not try to use JAX-RS / Jersey.)  
+b.	Receives an HTTP request from the native Android application  
+c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
+- -10 if you use a banned API
+- -10 if screen scrape instead of fetching XML or JSON via a published API
+
+d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design. Alternatively, you can adopt a standard schema that is appropriate to your application. (E.g. Common Alerting Protocol if your application deals with emergency alerts.)
+-	-5 if information beyond what is needed is passed on to the Android app, forcing the mobile app to do more computing than is necessary.  
+
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
-Writeup
-Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1.1 – 2.4) above.  Your writeup will guide the TAs in grading your application.  See the provided example (Project4Task1Writeup.pdf) for the content and style of this document.
+
+**Writeup**  
+Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  Your writeup will guide the TAs in grading your application.  See the provided example (Project4Task1Writeup.pdf) for the content and style of this document.
+
 Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
-Task 2 Web Service Logging and Analysis Dashboard
+
+### Task 2: Web Service Logging and Analysis Dashboard
+
 For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
 IMPORTANT NOTE:  Task 2 builds on Task 1, but for your own safety, you should not overwrite Task 1.  Rather, once you have Task 1 working, you should create a separate Task 2 project. In this way you will never lose the working Task 1 that you are required to submit. When deploying to Heroku, you should deploy Task 1 and Task 2 separately.  Heroku allows you do have multiple applications.  In this way, if Task 2 does not work for some reason, we still have Task 1 to grade.
 Logging data
