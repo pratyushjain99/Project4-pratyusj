@@ -93,7 +93,7 @@ d.	Replies to the Android application with an XML or JSON formatted response. Th
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
 
 #### Writeup
-Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  Your writeup will guide the TAs in grading your application.  See the provided example (Project4Task1Writeup.pdf) for the content and style of this document.
+Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  Your writeup will guide the TAs in grading your application.  See the provided example ( [Project4Task1Writeup.pdf](https://github.com/CMU-Heinz-95702/Project4/blob/master/docs/Project4-WriteUp.pdf) ) for the content and style of this document.
 
 Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
 
