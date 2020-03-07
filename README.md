@@ -55,30 +55,43 @@ Do not submit your code. It will be integrated into Task 2 and 3.
 <p style="font-size: 9px;">(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and <a href=https://en.wikipedia.org/wiki/Jaynestown>Jaynestown</a>.)</p>
 
 ### Task 1: Mobile to Cloud Application
-
 Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
-The application must be of your own creative design.  It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, and securely transmit sensor information.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
-Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 we experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is ProgrammableWeb. (http://www.programmableweb.com/apis/directory)
+
+The application must be of your own creative design.  It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, and does money transfers via a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
+
+Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 we experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is [ProgrammableWeb](http://www.programmableweb.com/apis/directory).
+
 Use APIs that require authentication with caution. Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
+
 Be sure your API is from a reputable source.   Make sure you do not base your project on an API built by a 7th grade student…
+
 Banned APIs: There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore you cannot use any of the following:
-	Any weather API
-	Flickr (for we have already done that)
-	Spotify
-	Google Maps (unless you also use a 2nd API to get info to put on the map)
-	OpenMovieDatabase
-	These NYTimes APIs:  top stories, news wires, popular, and books.
-	Yahoo Finance API
-	Yelp
-Users will access your application via a native Android application.  You do not need to have a browser-based interface for your application (only for the Task 2 dashboard).  The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+- Any weather API
+- Flickr (for we have already done that)
+- Spotify
+- Google Maps (unless you also use a 2nd API to get info to put on the map)
+-	OpenMovieDatabase
+-	These NYTimes APIs: top stories, news wires, popular, and books.
+-	Yahoo Finance API
+-	Yelp
+
+Users will access your application via a native Android application.  You do not need to have a browser-based interface for your application (only for the Task 2 dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+
 In detail, your application should satisfy the following requirements:
-1.	Implement a native Android application
-1.1.	Has at least three different kinds of views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View).
-1.2.	Requires input from the user
-1.3.	Makes an HTTP request (using an appropriate HTTP method) to your web service
-1.4.	Receives and parses an XML or JSON formatted reply from your web service
-1.5.	Displays new information to the user
-1.6.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
+
+1. x
+ 1. y
+  1. z
+
+
+**1.	Implement a native Android application**  
+a.	Has at least three different kinds of views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View).  
+b.	Requires input from the user  
+c.	Makes an HTTP request (using an appropriate HTTP method) to your web service  
+d.	Receives and parses an XML or JSON formatted reply from your web service  
+e.	Displays new information to the user  
+f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
+
 2.	Implement a web service, deployed to Heroku
 2.1.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do not try to use JAX-RS / Jersey.)
 2.2.	Receives an HTTP request from the native Android application
