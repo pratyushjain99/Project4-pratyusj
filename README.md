@@ -79,7 +79,7 @@ Users will access your application via a native Android application. **You do no
 
 In detail, your application should satisfy the following requirements:
 
-**1.	Implement a native Android application**  
+#### 1.	Implement a native Android application
 a.	Has at least three different kinds of views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View).  
 b.	Requires input from the user  
 c.	Makes an HTTP request (using an appropriate HTTP method) to your web service  
@@ -87,7 +87,7 @@ d.	Receives and parses an XML or JSON formatted reply from your web service
 e.	Displays new information to the user  
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
-**2.	Implement a web service, deployed to Heroku**  
+#### 2.	Implement a web service, deployed to Heroku
 a.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do not try to use JAX-RS / Jersey.)  
 b.	Receives an HTTP request from the native Android application  
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
@@ -99,7 +99,7 @@ d.	Replies to the Android application with an XML or JSON formatted response. Th
 
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
 
-**Writeup**  
+#### Writeup
 Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  Your writeup will guide the TAs in grading your application.  See the provided example (Project4Task1Writeup.pdf) for the content and style of this document.
 
 Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
@@ -107,12 +107,14 @@ Alternatively, instead of a document, you may submit a narrated screencast that 
 ### Task 2: Web Service Logging and Analysis Dashboard
 
 For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
-IMPORTANT NOTE:  Task 2 builds on Task 1, but for your own safety, you should not overwrite Task 1.  Rather, once you have Task 1 working, you should create a separate Task 2 project. In this way you will never lose the working Task 1 that you are required to submit. When deploying to Heroku, you should deploy Task 1 and Task 2 separately.  Heroku allows you do have multiple applications.  In this way, if Task 2 does not work for some reason, we still have Task 1 to grade.
-Logging data
+
+**Note:**  Task 2 builds on Task 1, but for your own safety, you should not overwrite Task 1.  Rather, once you have Task 1 working, you should create a separate Task 2 project. In this way you will never lose the working Task 1 that you are required to submit. When deploying to Heroku, you should deploy Task 1 and Task 2 separately.  Heroku allows you do have multiple applications.  In this way, if Task 2 does not work for some reason, we still have Task 1 to grade.
+#### Logging data
 Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone.
 You should NOT log data from interaction with the operations dashboard, only from the mobile phone.
-Database
+#### Database
 You should log your data persistently so that it is available across restarts of our application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
+
 The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a downloadable version of the database manager application (mongod) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
 Mongod is the MongoDB database server. It listens by default on port 27017. Requests and responses with the database are made via a MongoDB protocol.
 Mongo (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
