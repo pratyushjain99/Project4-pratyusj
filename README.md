@@ -3,13 +3,6 @@
 - **Task 0 Due: Friday March 20, 11:59pm**
 - **Task 1&2 Due: Friday April 3, 11:59pm**
 
-## This is a two
-### This is a three
-#### This is a four
-##### This is a five
-###### This is a six
-####### This is a seven
-
 ### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
@@ -52,7 +45,7 @@ Do not submit your code. It will be integrated into Task 2 and 3.
 - Task 0 complete and submitted on time: Bonus 5 points
 - Task 1 does not use the API demonstrated in Task 0:  Penalty 10 points
 
-<p style="font-size: 9px;">(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and <a href=https://en.wikipedia.org/wiki/Jaynestown>Jaynestown</a>.)</p>
+*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown>)).*
 
 ### Task 1: Mobile to Cloud Application
 Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
@@ -115,67 +108,92 @@ You should NOT log data from interaction with the operations dashboard, only fro
 #### Database
 You should log your data persistently so that it is available across restarts of our application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
 
-The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a downloadable version of the database manager application (mongod) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
-Mongod is the MongoDB database server. It listens by default on port 27017. Requests and responses with the database are made via a MongoDB protocol.
-Mongo (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
+The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a downloadable version of the database manager application (*mongod*) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
+
+*Mongod* is the MongoDB database server. It listens by default on port 27017. Requests and responses with the database are made via a MongoDB protocol.
+
+*Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
+
 Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is recommended because it has a free level of service that is adequate for your project.  
-Here is some information about setting up MongoDB Atlas:
-MongoDB Atlas
+
+#### Setting up MongoDB Atlas
 In this project, you are going to us nosql-database-as-a-service with MongoDB Atlas. Information about MongoDB can be found here: https://www.mongodb.com/what-is-mongodb
-Getting started
-1)	Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own account with a free “Starter Cluster”
-2)	When building a cluster, choose AWS as the cloud provider and choose N.Virginia (us-east-1) in the North American tab – you should see "Free tier available" there. Leave the Cluster Tier and Additional Settings as-is; you can give the cluster a name if you want (otherwise, it will be named something like "Cluster0"). Then click 'Create Cluster' in the bottom of the page; a Verify tab may pop up to make sure you're not a robot. The cluster takes a few minutes to create, so be patient.
-3)	Connect to the cluster.
-a)	Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.
-b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!
-c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.
-d)	Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).
-e)	Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.
+
+Getting started:
+1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own account with a free “Starter Cluster”
+2. When building a cluster, choose AWS as the cloud provider and choose N.Virginia (us-east-1) in the North American tab – you should see "Free tier available" there. Leave the Cluster Tier and Additional Settings as-is; you can give the cluster a name if you want (otherwise, it will be named something like "Cluster0"). Then click 'Create Cluster' in the bottom of the page; a Verify tab may pop up to make sure you're not a robot. The cluster takes a few minutes to create, so be patient.
+3. Connect to the cluster.  
+  a)	Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
+  b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!
+  c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.  
+  d)	Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
+  e)	Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
+
 You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
+
 Info about the MongoDB Java driver and sample code can be found here:
 http://mongodb.github.io/mongo-java-driver/3.11/driver/getting-started/quick-start/
+
 Bson info is available at:
 http://mongodb.github.io/mongo-java-driver/3.11/bson/documents/
-Dashboard
+
+#### Dashboard
 The purpose of logging data to the database is to be able to create an operations dashboard for your web service.  This dashboard should be web page interface for use from a desktop or laptop browser (not a mobile device).
+
 The dashboard should display two types of data:
-a)	Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
-b)	Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable.  (They should not be displayed as JSON nor XML.)
+1. Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
+2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable.  (They should not be displayed as JSON nor XML.)
+
 You will likely find HTML tables useful for formatting tabular information on a web page.  And there are plenty of examples of embedding data in tables with JSP on the web.   No frameworks are necessary for this, just < 20 lines of JSP (i.e. mixed HTML and Java). You may use a client-side framework if you like (e.g. Twitter Bootstrap).
-Please read carefully…
-This task will challenge you to do a lot of research to understand enough MongoDB to create a simple database, add a collection, and insert, update, and find documents in that collection.  This is very much like you will need to do regularly in industry. Code examples are provided on the MongoDB site, and elsewhere. As long as you include comments as to their source, you can use them in your code.  If we search for a snippet of your code find it somewhere, and you have not attributed it to where you found it, that will be cheating and reason for receiving a failing grade in the course.  Of course, the bulk of your code that is unique to your application should be your own and not copied from anywhere.
+
+**Please read carefully…**
+This task will challenge you to do a lot of research to understand enough MongoDB to create a simple database, add a collection, and insert, update, and find documents in that collection.  This is very much like you will need to do regularly in industry. Code examples are provided on the MongoDB site, and elsewhere. **As long as you include comments as to their source, you can use them in your code.**  If we search for a snippet of your code find it somewhere, and you have not attributed it to where you found it, that will be cheating and reason for receiving a failing grade in the course.  Of course, the bulk of your code that is unique to your application should be your own and not copied from anywhere.
+
 In detail, your solution should satisfy the following requirements:
-1.	Log useful information
+#### 1.	Log useful information
 At least 6 pieces of information is logged for each request/reply with the mobile phone.  It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone. (You should NOT log data from interactions from the operations dashboard.)
-2.	Store the log information in a database
+#### 2.	Store the log information in a database
 The web service can connect, store, and retrieve information from a MongoDB database in the cloud.
-3.	Display operations analytics and full logs on a web-based dashboard
-3.1.	A unique URL addresses a web interface dashboard for the web service.
-3.2.	The dashboard displays at least 3 interesting operations analytics.
-3.3.	The dashboard displays the full logs.
-4.	Deploy the web service to Heroku
-Deploy the web service to Heroku.  This web service should have all the functionality of Task 1 but with the additional logging, database, and dashboard analytics functions.  
+#### 3.	Display operations analytics and full logs on a web-based dashboard
+a. A unique URL addresses a web interface dashboard for the web service.  
+b. The dashboard displays at least 3 interesting operations analytics.  
+c. The dashboard displays the full logs.  
+
+#### 4. Deploy the web service to Heroku  
+This web service should have all the functionality of Task 1 but with the additional logging, database, and dashboard analytics functions.  
+
 In your Task 2 writeup be sure to include the dashboard URL!
-Task 2 Writeup
+
+#### Task 2 Writeup
 In the same style as Task 1, but in a separate document, describe how you have met these 4 requirements.
+
 Alternatively, similar to Task 1, you may submit a narrated screencast that includes the same information that would be in the writeup.
-Prizes
+
+### Prizes
 The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class for small prizes!
 
-Questions
+### Questions
 If you have questions, please post them to the course Piazza and the TAs and instructors will respond.
 
-Submission Summary
+### Submission Summary
 Follow the same submission procedures as in prior projects, except have writeup documents instead of screenshot directories.
+
 You will have two server apps (Task 1, Task 2), and one Android app to submit. Depending on how you set up your work in IntelliJ IDEA, you may have one to three projects.  (For example, you may have one project with 3 modules, or 3 projects, each with one module.)  In any case, be sure the Modules include the strings “Task1”, “Task2”, and “Android” in their names.
 
 You should also have two writeup documents that you should name:
-Project4Task1Writeup.pdf
-Project4Task2Writeup.pdf
+* Project4Task1Writeup.pdf
+* Project4Task2Writeup.pdf
+
 If you submit screencasts, use similar names (e.g. Project4Task1Screencast).
+
 You will have no separate screenshot directories for this project.
+
 For each IntelliJ IDEA project, “File->Export To Zip File…”. You must export in this way and NOT just zip the project folders.
+
 Now you should have one to three .zip files and two writeup documents
-Create a new empty folder named with your Andrew id (very important). Put all files mentioned above in to the new folder you created.
+
+Create a new empty folder **named with your Andrew id** (very important). Put all files mentioned above in to the new folder you created.
+
 Zip that folder and submit it to Canvas. The submission should be a single zip file.
+
 Now you should have only one .zip file named with your Andrew id.
