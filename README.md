@@ -3,6 +3,8 @@
 - **Task 0 Due: Friday March 20, 11:59pm**
 - **Task 1&2 Due: Friday April 3, 11:59pm**
 
+***Note***: *A week is given to complete Task 0 that does __not__ include Spring Break.  Two additional weeks are given to complete Tasks 1 & 2. The Project is made available before Spring Break in case you want to get started, but it is not expected that you do so.  Enjoy your Spring Break however you choose to spend it!*
+
 ### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
