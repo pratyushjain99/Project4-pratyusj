@@ -1,20 +1,16 @@
 # Project 4
-- **Assigned: Friday March 6**
-- **Task 0 Due: Friday March 20, 11:59pm**
-- **Task 1&2 Due: Friday April 3, 11:59pm**
-
-***Note***: *A week is given to complete Task 0 that does __not__ include Spring Break.  Two additional weeks are given to complete Tasks 1 & 2. The Project is made available before Spring Break in case you want to get started, but it is not expected that you do so.  Enjoy your Spring Break however you choose to spend it!*
+- **Assigned: Friday October 23**
+- **Task 0 Due: Friday October 30, 11:59pm**
+- **Task 1&2 Due: Friday November 13, 11:59pm**
 
 ### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
-- Task 0 involves researching, selecting, and demonstrating using a 3rd party API that you will use in Task 1&2, and writing and reading from a nosql-database-as-a-service.
-- Task 1 will build on the Deploying to the Cloud Lab and the Android Lab. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
+- Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to in your project.
+- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud Lab_ and _Lab 8 - Android Application Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
 - Task 2 will add an operations logging and analysis function to your Task 1 web service.
 
-When completing these tasks, the student should reflect on synchronous and asynchronous calls, event handling, remote interfaces, mobile and cloud computing.
-
-### Task 0: Demonstrate using a 3rd Party API and MongoDB-as-a-Service
+### Task 0: Demonstrate using chosen 3rd Party API and MongoDB-as-a-Service
 
 Research and choose a 3rd party API to use in Task 1 and 2.  Be sure to read Task 1 carefully to see how you will use the API, and to understand what APIs cannot be used.
 In detail, you should satisfy the following requirements:
@@ -47,35 +43,56 @@ Do not submit your code. It will be integrated into Task 2 and 3.
 - Task 0 complete and submitted on time: Bonus 5 points
 - Task 1 does not use the API demonstrated in Task 0:  Penalty 10 points
 
-*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown>)).*
+*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown)).*
 
 ### Task 1: Mobile to Cloud Application
 Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
 
 The application must be of your own creative design.  It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, and does money transfers via a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
 
-Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 we experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is [ProgrammableWeb](http://www.programmableweb.com/apis/directory).
+Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is [ProgrammableWeb](http://www.programmableweb.com/apis/directory).
+
+You might try to do an app related to COVID-19, [here are plenty of APIs to explore](https://www.programmableweb.com/category/coronavirus%2Bcovid-19/apis?category=29999%2C30105).
+
+Another option is to use Amazon S3 as your API, and store datasets on it that your app can access to analyze, visualize, or otherwise use. In this case you must have **two** data sources that you combining in some way (e.g. neighborhood income data and police shooting data).  Each of these data sets must have over 200 records.  (This requirement is arbitrary, and meant to imply significant data sets, not just a few records.  If you have a great idea but your data source has fewer than 200 records write to Joe via Piazza.)
+
+If you use Amazon S3, make sure you have enough free credits (or paid credits) left for TAs to do grading.  
+
+Here are some pointers to data sets related to Black Lives Matter, policing,  incarceration, and hate crimes:
+ - https://guides.nyu.edu/dataservices/blm
+ - https://www.propublica.org/datastore/dataset/documenting-hate-news-index
+ - https://libguides.princeton.edu/c.php?g=598338&p=4142165
 
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
 **Be sure your API is from a reputable source.**   Make sure you do not base your project on an API built by a 7th grade student…
 
 **Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
-- Any weather API
+- Alpha Vantage
+- Dog.ceo
+- Eventful
 - Flickr (for we have already done that)
-- Spotify
 - Google Maps (unless you also use a 2nd API to get info to put on the map)
+- Last.fm
+- Merriam-Webster Dictionary
+- NASA Astronomy Picture of the Day
+-	NYTimes APIs: specifically top stories, news wires, popular, and books.
 -	OpenMovieDatabase
--	These NYTimes APIs: top stories, news wires, popular, and books.
+- Pokemon API
+- Spoonacular
+- Spotify
+- Any weather API
 -	Yahoo Finance API
 -	Yelp
+- YouTube
+- Zomato
 
 Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Task 2 dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
 In detail, your application should satisfy the following requirements:
 
 #### 1.	Implement a native Android application
-a.	Has at least three different kinds of views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View).  
+a.	Has at least three different kinds of Views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View). **In order to figure out if something is a View, find its API.  It it extends android.view.View then it is a View.**  
 b.	Requires input from the user  
 c.	Makes an HTTP request (using an appropriate HTTP method) to your web service  
 d.	Receives and parses an XML or JSON formatted reply from your web service  
@@ -83,7 +100,7 @@ e.	Displays new information to the user
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
 #### 2.	Implement a web service, deployed to Heroku
-a.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do not try to use JAX-RS / Jersey.)  
+a.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do **not** try to use JAX-RS / Jersey.)  
 b.	Receives an HTTP request from the native Android application  
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
 - -10 if you use a banned API
@@ -94,8 +111,16 @@ d.	Replies to the Android application with an XML or JSON formatted response. Th
 
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
 
+#### 3. Handle error conditions
+Your application should test for and handle gracefully:
+ - Invalid mobile app input
+ - Invalid server-side input (regardless of mobile app input validation)
+ - Mobile app network failure, unable to reach server
+ - Third-party API unavailable
+ - Third-party API invalid data
+
 #### Writeup
-Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  Your writeup will guide the TAs in grading your application.  See the provided example ([Project4Task1Writeup.pdf](https://github.com/CMU-Heinz-95702/Project4/blob/master/docs/Project4-WriteUp.pdf)) for the content and style of this document.
+Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  (You do not need to document _3. Handle error conditions_.) Your writeup will guide the TAs in grading your application.  See the provided example ([Project4Task1Writeup.pdf](https://github.com/CMU-Heinz-95702/Project4/blob/master/docs/Project4-WriteUp.pdf)) for the content and style of this document.
 
 Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
 
@@ -122,10 +147,10 @@ Because your web service will be running in the Heroku PaaS (or more specificall
 In this project, you are going to us nosql-database-as-a-service with MongoDB Atlas. Information about MongoDB can be found here: https://www.mongodb.com/what-is-mongodb
 
 Getting started:
-1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own account with a free “Starter Cluster”
-2. When building a cluster, choose AWS as the cloud provider and choose N.Virginia (us-east-1) in the North American tab – you should see "Free tier available" there. Leave the Cluster Tier and Additional Settings as-is; you can give the cluster a name if you want (otherwise, it will be named something like "Cluster0"). Then click 'Create Cluster' in the bottom of the page; a Verify tab may pop up to make sure you're not a robot. The cluster takes a few minutes to create, so be patient.
+1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own free account.
+2. When building a cluster, choose AWS as the cloud provider and choose N.Virginia (us-east-1) in the North American tab - you should see it noted as free. Leave the Cluster Tier and Additional Settings as-is; you can give the cluster a name if you want (otherwise, it will be named something like "Cluster0"). Then click 'Create Cluster' in the bottom of the page; a Verify tab may pop up to make sure you're not a robot. The cluster takes a few minutes to create, so be patient.
 3. Connect to the cluster.  
-  a)	Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
+  a) Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
   b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!
   c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.  
   d)	Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
@@ -133,18 +158,18 @@ Getting started:
 
 You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
 
-Info about the MongoDB Java driver and sample code can be found here:
-http://mongodb.github.io/mongo-java-driver/3.11/driver/getting-started/quick-start/
+Info about the MongoDB Java driver and sample code can be found here:  
+http://mongodb.github.io/mongo-java-driver/4.1/driver/getting-started/quick-start/
 
-Bson info is available at:
-http://mongodb.github.io/mongo-java-driver/3.11/bson/documents/
+Bson info is available at:  
+http://mongodb.github.io/mongo-java-driver/4.1/bson/documents/
 
 #### Dashboard
 The purpose of logging data to the database is to be able to create an operations dashboard for your web service.  This dashboard should be web page interface for use from a desktop or laptop browser (not a mobile device).
 
 The dashboard should display two types of data:
 1. Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
-2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable.  (They should not be displayed as JSON nor XML.)
+2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable. **(They should not be displayed as JSON nor XML.)**
 
 You will likely find HTML tables useful for formatting tabular information on a web page.  And there are plenty of examples of embedding data in tables with JSP on the web.   No frameworks are necessary for this, just < 20 lines of JSP (i.e. mixed HTML and Java). You may use a client-side framework if you like (e.g. Twitter Bootstrap).
 
@@ -171,8 +196,12 @@ In the same style as Task 1, but in a separate document, describe how you have m
 
 Alternatively, similar to Task 1, you may submit a narrated screencast that includes the same information that would be in the writeup.
 
-### Prizes
-The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class for small prizes!
+#### Task 2 Diagram
+The following is a diagram of the components in Task 2:
+[Task 2 Diagram](docs/Project4-Diagram.png)
+
+### Demos
+The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class!
 
 ### Questions
 If you have questions, please post them to the course Piazza and the TAs and instructors will respond.
