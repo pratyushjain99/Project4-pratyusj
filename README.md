@@ -198,7 +198,7 @@ Alternatively, similar to Task 1, you may submit a narrated screencast that incl
 
 #### Task 2 Diagram
 The following is a diagram of the components in Task 2:
-[Task 2 Diagram](docs/Project4-Diagram.png)
+![Task 2 Diagram](docs/Project4-Diagram.png)
 
 ### Demos
 The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class!
