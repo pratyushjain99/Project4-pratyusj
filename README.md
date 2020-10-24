@@ -197,7 +197,7 @@ In the same style as Task 1, but in a separate document, describe how you have m
 Alternatively, similar to Task 1, you may submit a narrated screencast that includes the same information that would be in the writeup.
 
 #### Task 2 Diagram
-The following is a diagram of the components in Task 2:
+The following is a diagram of the components in Task 2.
 ![Task 2 Diagram](docs/Project4-Diagram.png)
 
 ### Demos
