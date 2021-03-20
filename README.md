@@ -7,7 +7,7 @@
 
 This project has 3 tasks:
 - Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to in your project.
-- Task 1 will build on _Lab 3 - Containers and Cloud Deployment and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
+- Task 1 will build on _Lab 3 - Containers and Cloud Deployment_ and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
 - Task 2 will add an operations logging and analysis function to your Task 1 web service.
 
 ### Task 0: Demonstrate using chosen 3rd Party API and MongoDB-as-a-Service
@@ -153,7 +153,7 @@ Getting started:
 3. Choose a cloud provide and region, or accept the defaults, and Create Cluster. The cluster takes a few minutes to create, so be patient.
 4. Connect to the cluster.  
   a) Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
-  b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!
+  b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!  
   c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.  
   d)	Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
   e)	Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
