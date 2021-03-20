@@ -1,13 +1,13 @@
 # Project 4
-- **Assigned: Friday October 23**
-- **Task 0 Due: Friday October 30, 11:59pm**
-- **Task 1&2 Due: Friday November 13, 11:59pm**
+- **Assigned: Friday March 19**
+- **Task 0 Due: Friday March 26, 11:59pm**
+- **Task 1&2 Due: Friday April 9, 11:59pm**
 
 ### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
 - Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to in your project.
-- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud Lab_ and _Lab 8 - Android Application Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
+- Task 1 will build on _Lab 3 - Containers and Cloud Deployment and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
 - Task 2 will add an operations logging and analysis function to your Task 1 web service.
 
 ### Task 0: Demonstrate using chosen 3rd Party API and MongoDB-as-a-Service
@@ -48,9 +48,9 @@ Do not submit your code. It will be integrated into Task 2 and 3.
 ### Task 1: Mobile to Cloud Application
 Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
 
-The application must be of your own creative design.  It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, and does money transfers via a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
+The application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
 
-Your web service deployed to Heroku should be a simple RESTful API as you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  One good place to look for such APIs is [ProgrammableWeb](http://www.programmableweb.com/apis/directory).
+Your web service deployed to Heroku should be a simple RESTful API similar to those you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs, and [ProgrammableWeb](http://www.programmableweb.com/apis/directory) provides a directory.
 
 You might try to do an app related to COVID-19, [here are plenty of APIs to explore](https://www.programmableweb.com/category/coronavirus%2Bcovid-19/apis?category=29999%2C30105).
 
@@ -135,21 +135,23 @@ You should NOT log data from interaction with the operations dashboard, only fro
 #### Database
 You should log your data persistently so that it is available across restarts of our application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
 
-The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a downloadable version of the database manager application (*mongod*) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
+The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a [downloadable version of the database manager application](https://www.mongodb.com/try/download/enterprise) (*mongod*) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
 
 *Mongod* is the MongoDB database server. It listens by default on port 27017. Requests and responses with the database are made via a MongoDB protocol.
 
 *Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
 
-Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is recommended because it has a free level of service that is adequate for your project.  
+Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is recommended because it has a free level of service (look for _Shared (M0 Cluster)_ ), that is adequate for your project.  
 
 #### Setting up MongoDB Atlas
 In this project, you are going to us nosql-database-as-a-service with MongoDB Atlas. Information about MongoDB can be found here: https://www.mongodb.com/what-is-mongodb
 
 Getting started:
 1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own free account.
-2. When building a cluster, choose AWS as the cloud provider and choose N.Virginia (us-east-1) in the North American tab - you should see it noted as free. Leave the Cluster Tier and Additional Settings as-is; you can give the cluster a name if you want (otherwise, it will be named something like "Cluster0"). Then click 'Create Cluster' in the bottom of the page; a Verify tab may pop up to make sure you're not a robot. The cluster takes a few minutes to create, so be patient.
-3. Connect to the cluster.  
+2. Choose Java as the preferred language.
+3. Choose the FREE shared cluster.
+3. Choose a cloud provide and region, or accept the defaults, and Create Cluster. The cluster takes a few minutes to create, so be patient.
+4. Connect to the cluster.  
   a) Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
   b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!
   c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.  
@@ -169,7 +171,7 @@ The purpose of logging data to the database is to be able to create an operation
 
 The dashboard should display two types of data:
 1. Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
-2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable. **(They should not be displayed as JSON nor XML.)**
+2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable. **(Three points will be lost if they are displayed as JSON nor XML.)**  
 
 You will likely find HTML tables useful for formatting tabular information on a web page.  And there are plenty of examples of embedding data in tables with JSP on the web.   No frameworks are necessary for this, just < 20 lines of JSP (i.e. mixed HTML and Java). You may use a client-side framework if you like (e.g. Twitter Bootstrap).
 
@@ -184,7 +186,7 @@ The web service can connect, store, and retrieve information from a MongoDB data
 #### 3.	Display operations analytics and full logs on a web-based dashboard
 a. A unique URL addresses a web interface dashboard for the web service.  
 b. The dashboard displays at least 3 interesting operations analytics.  
-c. The dashboard displays the full logs.  
+c. The dashboard displays **formatted** full logs.  
 
 #### 4. Deploy the web service to Heroku  
 This web service should have all the functionality of Task 1 but with the additional logging, database, and dashboard analytics functions.  
