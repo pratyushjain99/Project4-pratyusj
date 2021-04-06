@@ -163,6 +163,24 @@ You can access this cloud-based MongoDB database from your laptop as well as fro
 Info about the MongoDB Java driver and sample code can be found here:  
 http://mongodb.github.io/mongo-java-driver/4.1/driver/getting-started/quick-start/
 
+An easy way to include the drivers into your IntelliJ project is the following
+1. Add the latest sync driver:  
+File menu -> Project Structure -> Libraries -> + new library "From Maven"  
+"Download Library from Maven Repository": org.mongodb:mongodb-driver-sync:4.2.2
+2. If you have any other mongodb driver library, select it and "-" to remove.  
+(You will get warnings that you are removing it from artifacts also.)
+3. Select Artifacts within Project Settings  
+On the right of the panel, you will see "Available Elements" and org.mongodb:mongodb-driver-sync:4.2.2 listed there. Double click on it to add it to the artifact.  
+4. Make sure you are using the connection string you got from the MongoDB dashboard. It should be in the form:  
+MongoClient mongoClient = MongoClients.create("mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority");
+
+Hint: Use a password that uses only letters and numbers so you don't have to deal with encoding it.
+
+If your web app is timing out when deployed to Heroku and trying to communicate with MongoDB Atlas, it might be because MongoDB Atlas is requiring TLSv1.2, and your web service is not complying.  To fix this, edit your Dockerfile and add the following lines near the top of the file with the other ENV commands. (But not the first line in the file.)
+```
+# Use TLSv1.2 for communication between Heroku and MongoDB
+ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2"
+```
 Bson info is available at:  
 http://mongodb.github.io/mongo-java-driver/4.1/bson/documents/
 
