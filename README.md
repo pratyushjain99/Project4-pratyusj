@@ -60,7 +60,6 @@ If you use Amazon S3, make sure you have enough free credits (or paid credits) l
 
 Here are some pointers to data sets related to Black Lives Matter, policing,  incarceration, and hate crimes:
  - https://guides.nyu.edu/dataservices/blm
- - https://www.propublica.org/datastore/dataset/documenting-hate-news-index
  - https://libguides.princeton.edu/c.php?g=598338&p=4142165
 
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
@@ -68,6 +67,7 @@ Here are some pointers to data sets related to Black Lives Matter, policing,  in
 **Be sure your API is from a reputable source.**   Make sure you do not base your project on an API built by a 7th grade student…
 
 **Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
+- Agify.io
 - Alpha Vantage
 - Dog.ceo
 - Eventful
@@ -100,7 +100,7 @@ e.	Displays new information to the user
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
 #### 2.	Implement a web service, deployed to Heroku
-a.	Using an HttpServlet to implement a simple (can be a single path) API.  (It is recommended that you do **not** try to use JAX-RS / Jersey.)  
+a.	Implement a simple (can be a single path) API.  
 b.	Receives an HTTP request from the native Android application  
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
 - -10 if you use a banned API
