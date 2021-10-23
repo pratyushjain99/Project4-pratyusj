@@ -1,13 +1,13 @@
 # Project 4
-- **Assigned: Friday March 19**
-- **Task 0 Due: Friday March 26, 11:59pm**
-- **Task 1&2 Due: Friday April 9, 11:59pm**
+- **Assigned: Friday October 22**
+- **Task 0 Due: Friday October 29, 11:59pm**
+- **Task 1&2 Due: Friday November 12, 11:59pm**
 
 ### Project Topics: Mobile to Cloud application
 
 This project has 3 tasks:
-- Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to in your project.
-- Task 1 will build on _Lab 3 - Containers and Cloud Deployment_ and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
+- Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to use in your project.
+- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud_ and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
 - Task 2 will add an operations logging and analysis function to your Task 1 web service.
 
 ### Task 0: Demonstrate using chosen 3rd Party API and MongoDB-as-a-Service
@@ -106,7 +106,7 @@ c.	Executes business logic appropriate to your application.  This includes fetch
 - -10 if you use a banned API
 - -10 if screen scrape instead of fetching XML or JSON via a published API
 
-d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design. Alternatively, you can adopt a standard schema that is appropriate to your application. (E.g. Common Alerting Protocol if your application deals with emergency alerts.)
+d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.  
 -	-5 if information beyond what is needed is passed on to the Android app, forcing the mobile app to do more computing than is necessary.  
 
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
@@ -133,7 +133,7 @@ For Task 2, you are to embellish your web service to add logging, analysis, and 
 Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone.
 You should NOT log data from interaction with the operations dashboard, only from the mobile phone.
 #### Database
-You should log your data persistently so that it is available across restarts of our application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
+You should log your data persistently so that it is available across restarts of the application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
 
 The main MongoDB web site is https://www.mongodb.com. The site provides documentation, a [downloadable version of the database manager application](https://www.mongodb.com/try/download/enterprise) (*mongod*) that you can run on your laptop, and MongoDB drivers for many languages, including Java.
 
@@ -153,25 +153,26 @@ Getting started:
 3. Choose a cloud provide and region, or accept the defaults, and Create Cluster. The cluster takes a few minutes to create, so be patient.
 4. Connect to the cluster.  
   a) Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
-  b)	Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these!  
-  c)	Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 3.6 or later.  
-  d)	Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
-  e)	Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
+  b) Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these.  
+  c) Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3 or later.  
+  d) Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
+  e) **For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
+  **For Task 2:** Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
 
 You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
 
 Info about the MongoDB Java driver and sample code can be found here:  
-http://mongodb.github.io/mongo-java-driver/4.1/driver/getting-started/quick-start/
+https://docs.mongodb.com/drivers/java/sync/current/quick-start/
 
-An easy way to include the drivers into your IntelliJ project is the following
-1. Add the latest sync driver:  
-File menu -> Project Structure -> Libraries -> + new library "From Maven"  
-"Download Library from Maven Repository": org.mongodb:mongodb-driver-sync:4.2.2
-2. If you have any other mongodb driver library, select it and "-" to remove.  
-(You will get warnings that you are removing it from artifacts also.)
-3. Select Artifacts within Project Settings  
-On the right of the panel, you will see "Available Elements" and org.mongodb:mongodb-driver-sync:4.2.2 listed there. Double click on it to add it to the artifact.  
-4. Make sure you are using the connection string you got from the MongoDB dashboard. It should be in the form:  
+You can easily add the MongoDB Java Drivers to a project with Maven:
+```
+<dependency>
+   <groupId>org.mongodb</groupId>
+   <artifactId>mongodb-driver-sync</artifactId>
+   <version>4.3.3</version>
+</dependency>
+```
+Make sure you are using the connection string you got from the MongoDB dashboard. It should be in the form:  
 MongoClient mongoClient = MongoClients.create("mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority");
 
 Hint: Use a password that uses only letters and numbers so you don't have to deal with encoding it.
@@ -181,8 +182,19 @@ If your web app is timing out when deployed to Heroku and trying to communicate 
 # Use TLSv1.2 for communication between Heroku and MongoDB
 ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2"
 ```
+This should not be necessary when running on your laptop with Java 16.
+
 Bson info is available at:  
 http://mongodb.github.io/mongo-java-driver/4.1/bson/documents/
+
+#### Errors connecting with MongoDB Atlas from your laptop
+There can be a number of issues using the default connection string when trying to connect to MongoDB Atlas from your laptop. If your connection is timing out, then try the following:  
+1. On the MongoDB Atlas dashboard where you created the database, click on *Databases* and then on *Cluster0*  You will see three shard servers listed, and one is the primary.  Click on the name of the primary.  
+2. Copy the full name of the primary server.  The SERVER URL will look something like:  
+`cluster0-shard-00-01.48vim.mongodb.net:27017`  
+3. Use the connection string:  
+`mongodb://USER:PASSWD@SERVER/test?w=majority&retryWrites=true&tls=true&authMechanism=SCRAM-SHA-1`  
+Be sure to substute your own values for USER, PASSWD, and SERVER.
 
 #### Dashboard
 The purpose of logging data to the database is to be able to create an operations dashboard for your web service.  This dashboard should be web page interface for use from a desktop or laptop browser (not a mobile device).
@@ -227,8 +239,6 @@ The TAs will identify exemplar projects that are unique in some way and nominate
 If you have questions, please post them to the course Piazza and the TAs and instructors will respond.
 
 ### Submission Summary
-Follow the same submission procedures as in prior projects, except have writeup documents instead of screenshot directories.
-
 You will have two server apps (Task 1, Task 2), and one Android app to submit. Depending on how you set up your work in IntelliJ IDEA, you may have one to three projects.  (For example, you may have one project with 3 modules, or 3 projects, each with one module.)  In any case, be sure the Modules include the strings “Task1”, “Task2”, and “Android” in their names.
 
 You should also have two writeup documents that you should name:
@@ -243,8 +253,6 @@ For each IntelliJ IDEA project, “File->Export To Zip File…”. You must expo
 
 Now you should have one to three .zip files and two writeup documents
 
-Create a new empty folder **named with your Andrew id** (very important). Put all files mentioned above in to the new folder you created.
+Create a new empty folder **named with your Andrew id** (very important). Put all files mentioned above in to the new folder you created.  Zip that folder.
 
-Zip that folder and submit it to Canvas. The submission should be a single zip file.
-
-Now you should have only one .zip file named with your Andrew id.
+Now you should have only one .zip file named with your Andrew id. Submit that single .zip file to Canvas.
