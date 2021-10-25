@@ -173,7 +173,9 @@ You can easily add the MongoDB Java Drivers to a project with Maven:
 </dependency>
 ```
 Make sure you are using the connection string you got from the MongoDB dashboard. It should be in the form:  
-`MongoClient mongoClient = MongoClients.create("mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority");`
+```
+MongoClient mongoClient = MongoClients.create("mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority");
+```
 
 Hint: Use a password that uses only letters and numbers so you don't have to deal with encoding it.
 
