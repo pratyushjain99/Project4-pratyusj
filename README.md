@@ -1,7 +1,7 @@
 # Project 4
-- **Assigned: Friday October 22**
-- **Task 0 Due: Friday October 29, 11:59pm**
-- **Task 1&2 Due: Friday November 12, 11:59pm**
+- **Assigned: Friday March 18**
+- **Task 0 Due: Friday March 25, 11:59pm**
+- **Task 1&2 Due: Friday April 8, 11:59pm**
 
 ### Project Topics: Mobile to Cloud application
 
@@ -52,19 +52,13 @@ The application must be of your own creative design. (We will use software simil
 
 Your web service deployed to Heroku should be a simple RESTful API similar to those you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs, and [ProgrammableWeb](http://www.programmableweb.com/apis/directory) provides a directory.
 
-You might try to do an app related to COVID-19, [here are plenty of APIs to explore](https://www.programmableweb.com/category/coronavirus%2Bcovid-19/apis?category=29999%2C30105).
-
 Another option is to use Amazon S3 as your API, and store datasets on it that your app can access to analyze, visualize, or otherwise use. In this case you must have **two** data sources that you combining in some way (e.g. neighborhood income data and police shooting data).  Each of these data sets must have over 200 records.  (This requirement is arbitrary, and meant to imply significant data sets, not just a few records.  If you have a great idea but your data source has fewer than 200 records write to Joe via Piazza.)
 
 If you use Amazon S3, make sure you have enough free credits (or paid credits) left for TAs to do grading.  
 
-Here are some pointers to data sets related to Black Lives Matter, policing,  incarceration, and hate crimes:
- - https://guides.nyu.edu/dataservices/blm
- - https://libguides.princeton.edu/c.php?g=598338&p=4142165
-
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
-**Be sure your API is from a reputable source.**   Make sure you do not base your project on an API built by a 7th grade student…
+**Be sure your API is from a reputable source.  Your API still needs to be available when the TAs go to grade your project.** Make sure you do not base your project on an API built by a 7th grade student…
 
 **Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
 - Agify.io
@@ -105,6 +99,8 @@ b.	Receives an HTTP request from the native Android application
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
 - -10 if you use a banned API
 - -10 if screen scrape instead of fetching XML or JSON via a published API
+
+**Use Servlets, rather than JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
 
 d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.  
 -	-5 if information beyond what is needed is passed on to the Android app, forcing the mobile app to do more computing than is necessary.  
@@ -150,13 +146,16 @@ Getting started:
 1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own free account.
 2. Choose Java as the preferred language.
 3. Choose the FREE shared cluster.
-3. Choose a cloud provide and region, or accept the defaults, and Create Cluster. The cluster takes a few minutes to create, so be patient.
-4. Connect to the cluster.  
-  a) Click on the 'Connect' button in the Sandbox section. Then click 'Add a Different IP Address'. Make the IP '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.  
-  b) Create a MongoDB user name and password (only use letters and numbers to save yourself some hassle for encoding it later) -  don't forget these.  
-  c) Click 'Choose a connection method'; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3 or later.  
-  d) Click on the Full Driver Example (next to the Connection String Only tab). Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
-  e) **For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
+4. Choose a cloud provide and region, or accept the defaults, and Create Cluster.
+5. In the Security Quickstart:
+ - *How would you like to authenticate your connection?* Authenticate using Username and Password.  Create a MongoDB user name and password (**only use letters and numbers to save yourself some hassle for encoding it later**) -  don't forget these.  The cluster takes a few minutes to provision, so be patient.
+ - *Where would you like to connect from?* Choose My Local Environment and add the IP address '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. (You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.)
+ - You can then Finish and Close
+6. Connect to the cluster.  
+  a) Click on the 'Connect' button in the Sandbox section.  
+	b) For *Choose a connection method*; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3 or later.  
+  c) Click on the Full Driver Example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
+  d) **For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
   **For Task 2:** Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
 
 You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
@@ -191,7 +190,7 @@ http://mongodb.github.io/mongo-java-driver/4.1/bson/documents/
 
 #### Errors connecting with MongoDB Atlas from your laptop
 There can be a number of issues using the default connection string when trying to connect to MongoDB Atlas from your laptop. If your connection is timing out, then try the following:  
-1. On the MongoDB Atlas dashboard where you created the database, click on *Databases* and then on *Cluster0*  You will see three shard servers listed, and one is the primary.  Click on the name of the primary.  
+1. On the MongoDB Atlas dashboard where you created the database, click on *Database* and then on *Cluster0*  You will see three shard servers listed, and one is the primary.  Click on the name of the primary.  
 2. Copy the full name of the primary server.  The SERVER URL will look something like:  
 `cluster0-shard-00-01.48vim.mongodb.net:27017`  
 3. Use the connection string:  
