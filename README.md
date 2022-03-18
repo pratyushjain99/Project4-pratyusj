@@ -50,6 +50,9 @@ Design and build a distributed application that works between a mobile phone and
 
 The application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
 
+The following is a diagram of the components in Task 1.  
+![Task 2 Diagram](docs/Project4-Diagram-Task1.png)
+
 Your web service deployed to Heroku should be a simple RESTful API similar to those you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs, and [ProgrammableWeb](http://www.programmableweb.com/apis/directory) provides a directory.
 
 Another option is to use Amazon S3 as your API, and store datasets on it that your app can access to analyze, visualize, or otherwise use. In this case you must have **two** data sources that you combining in some way (e.g. neighborhood income data and police shooting data).  Each of these data sets must have over 200 records.  (This requirement is arbitrary, and meant to imply significant data sets, not just a few records.  If you have a great idea but your data source has fewer than 200 records write to Joe via Piazza.)
@@ -86,7 +89,7 @@ Users will access your application via a native Android application. **You do no
 In detail, your application should satisfy the following requirements:
 
 #### 1.	Implement a native Android application
-a.	Has at least three different kinds of Views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View). **In order to figure out if something is a View, find its API.  It it extends android.view.View then it is a View.**  
+a.	Has at least three different kinds of Views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View). **In order to figure out if something is a View, find its API.  If it extends android.view.View then it is a View.**  
 b.	Requires input from the user  
 c.	Makes an HTTP request (using an appropriate HTTP method) to your web service  
 d.	Receives and parses an XML or JSON formatted reply from your web service  
@@ -100,10 +103,10 @@ c.	Executes business logic appropriate to your application.  This includes fetch
 - -10 if you use a banned API
 - -10 if screen scrape instead of fetching XML or JSON via a published API
 
-**Use Servlets, rather than JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
+**Use Servlets, not JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
 
 d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.  
--	-5 if information beyond what is needed is passed on to the Android app, forcing the mobile app to do more computing than is necessary.  
+-	-5 if more information is returned to the Android app that is needed, forcing the mobile app to do more computing than is necessary. The web service should select and pass on only the information that the mobile app needs.
 
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
 
@@ -124,6 +127,9 @@ Alternatively, instead of a document, you may submit a narrated screencast that 
 
 For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
 
+The following is a diagram of the components in Task 2.
+![Task 2 Diagram](docs/Project4-Diagram.png)
+
 **Note:**  Task 2 builds on Task 1, but for your own safety, you should not overwrite Task 1.  Rather, once you have Task 1 working, you should create a separate Task 2 project. In this way you will never lose the working Task 1 that you are required to submit. When deploying to Heroku, you should deploy Task 1 and Task 2 separately.  Heroku allows you do have multiple applications.  In this way, if Task 2 does not work for some reason, we still have Task 1 to grade.
 #### Logging data
 Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone.
@@ -137,7 +143,7 @@ The main MongoDB web site is https://www.mongodb.com. The site provides document
 
 *Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
 
-Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is recommended because it has a free level of service (look for _Shared (M0 Cluster)_ ), that is adequate for your project.  
+Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is required because it has a free level of service that is adequate for your project.  
 
 #### Setting up MongoDB Atlas
 In this project, you are going to us nosql-database-as-a-service with MongoDB Atlas. Information about MongoDB can be found here: https://www.mongodb.com/what-is-mongodb
@@ -146,22 +152,26 @@ Getting started:
 1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own free account.
 2. Choose Java as the preferred language.
 3. Choose the FREE shared cluster.
-4. Choose a cloud provide and region, or accept the defaults, and Create Cluster.
+4. Accept the default cloud provider and region and Create Cluster.
 5. In the Security Quickstart:
- - *How would you like to authenticate your connection?* Authenticate using Username and Password.  Create a MongoDB user name and password (**only use letters and numbers to save yourself some hassle for encoding it later**) -  don't forget these.  The cluster takes a few minutes to provision, so be patient.
- - *Where would you like to connect from?* Choose My Local Environment and add the IP address '0.0.0.0/0'. This means your DB will be open to the world, which is needed for the grading purposes. (You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.)
+ - *How would you like to authenticate your connection?*  
+ Authenticate using Username and Password.  Create a MongoDB user name and password (**only use letters and numbers to save yourself some hassle for encoding it later**) -  don't forget these.  The cluster takes a few minutes to provision, so be patient.
+ - *Where would you like to connect from?*  
+ Choose My Local Environment and add the IP address `0.0.0.0/0`. This means your DB will be open to the world, which is needed for the grading purposes. (You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.)
  - You can then Finish and Close
 6. Connect to the cluster.  
   a) Click on the 'Connect' button in the Sandbox section.  
-	b) For *Choose a connection method*; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3 or later.  
-  c) Click on the Full Driver Example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll copy ad paste that into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
-  d) **For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
-  **For Task 2:** Create your dashboard program that includes the code stub above; see the sample code in the Quick Start guide above to see how to access the database. Execute the code and you should see the log information from MongoDB. That means you have successfully connected to the Cluster. You may now create databases and collections needed for your dashboard.  
+	b) For *Choose a connection method*; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3.  
+  c) Click on the Full Driver Example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll edit and paste into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
+  d) You will access this database in two ways:  
+	**For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
+  **For Task 2:** Create your dashboard.  
 
-You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
+The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
 
 Info about the MongoDB Java driver and sample code can be found here:  
-https://docs.mongodb.com/drivers/java/sync/current/quick-start/
+https://docs.mongodb.com/drivers/java/sync/v4.3/quick-start/
+
 
 You can easily add the MongoDB Java Drivers to a project with Maven:
 ```
@@ -171,31 +181,58 @@ You can easily add the MongoDB Java Drivers to a project with Maven:
    <version>4.3.3</version>
 </dependency>
 ```
-Make sure you are using the connection string you got from the MongoDB dashboard. It should be in the form:  
-```
-MongoClient mongoClient = MongoClients.create("mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority");
-```
 
-Hint: Use a password that uses only letters and numbers so you don't have to deal with encoding it.
+#### Hints for connecting to MongoDB Atlas
 
-If your web app is timing out when deployed to Heroku and trying to communicate with MongoDB Atlas, it might be because MongoDB Atlas is requiring TLSv1.2, and your web service is not complying.  To fix this, edit your Dockerfile and add the following lines near the top of the file with the other ENV commands. (But not the first line in the file.)
+Use a password that uses only letters and numbers so you don't have to deal with encoding it.
+
+When Heroku communicates with MongoDB Atlas, it requires TLSv1.2.  To enable this, edit your Dockerfile and add the following lines near the top of the file with the other ENV commands. (But not the first line in the file.)
 ```
 # Use TLSv1.2 for communication between Heroku and MongoDB
 ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2"
 ```
-This should not be necessary when running on your laptop with Java 16.
+
+The MongoDB connection string that Atlas provides is of the form:
+```
+mongodb+srv://USER:PASSWD@CLUSTER.mongodb.net/mydb?retryWrites=true&w=majority
+```
+
+But the `+srv` will not work with a number of DNS servers, and TLS and an authentication mechanism needs to be defined. Therefore:
+1. On the MongoDB Atlas dashboard where you created the database, click on *Database* and then on *Cluster0*  You will see three shard servers listed.  Click on the name of each to display the full server URL, and copy the full URL.  It will look something like  
+ `cluster0-shard-00-02.cbkkm.mongodb.net:27017`
+2. Find the URLs for the other two shard servers and copy them also.
+3. Create your own connection string:  
+`mongodb://USER:PASSWD@SERVER1,SERVER2,SERVER3/test?w=majority&retryWrites=true&tls=true&authMechanism=SCRAM-SHA-1`  
+Be sure to substitute your own values for USER, PASSWD, and SERVER1-3
+
+The resulting connection string should look similar to:  
+```
+mongodb://myuser:mysecretpassword@cluster0-shard-00-02.cbkkm.mongodb.net:27017,cluster0-shard-00-01.cbkkm.mongodb.net:27017,cluster0-shard-00-00.cbkkm.mongodb.net:27017/myFirstDatabase?w=majority&retryWrites=true&tls=true&authMechanism=SCRAM-SHA-1
+
+
+```
+
+When running your application, you will see the following warning:  
+`WARNING: SLF4J not found on the classpath.  Logging is disabled for the 'org.mongodb.driver' component`
+
+If you would like to see the messages logged from the MongoDB driver, add the following dependencies to the pom.xml file:
+```
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+ <dependency>
+		 <groupId>org.slf4j</groupId>
+		 <artifactId>slf4j-api</artifactId>
+		 <version>1.7.36</version>
+ </dependency>
+ <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+ <dependency>
+		 <groupId>org.slf4j</groupId>
+		 <artifactId>slf4j-simple</artifactId>
+		 <version>1.7.36</version>
+ </dependency>
+```
 
 Bson info is available at:  
 http://mongodb.github.io/mongo-java-driver/4.1/bson/documents/
-
-#### Errors connecting with MongoDB Atlas from your laptop
-There can be a number of issues using the default connection string when trying to connect to MongoDB Atlas from your laptop. If your connection is timing out, then try the following:  
-1. On the MongoDB Atlas dashboard where you created the database, click on *Database* and then on *Cluster0*  You will see three shard servers listed, and one is the primary.  Click on the name of the primary.  
-2. Copy the full name of the primary server.  The SERVER URL will look something like:  
-`cluster0-shard-00-01.48vim.mongodb.net:27017`  
-3. Use the connection string:  
-`mongodb://USER:PASSWD@SERVER/test?w=majority&retryWrites=true&tls=true&authMechanism=SCRAM-SHA-1`  
-Be sure to substute your own values for USER, PASSWD, and SERVER.
 
 #### Dashboard
 The purpose of logging data to the database is to be able to create an operations dashboard for your web service.  This dashboard should be web page interface for use from a desktop or laptop browser (not a mobile device).
@@ -228,10 +265,6 @@ In your Task 2 writeup be sure to include the dashboard URL!
 In the same style as Task 1, but in a separate document, describe how you have met these 4 requirements.
 
 Alternatively, similar to Task 1, you may submit a narrated screencast that includes the same information that would be in the writeup.
-
-#### Task 2 Diagram
-The following is a diagram of the components in Task 2.
-![Task 2 Diagram](docs/Project4-Diagram.png)
 
 ### Demos
 The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class!
