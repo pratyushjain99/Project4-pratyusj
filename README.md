@@ -275,6 +275,8 @@ If you have questions, please post them to the course Piazza and the TAs and ins
 ### Submission Summary
 You will have two server apps (Task 1, Task 2), and one Android app to submit. Depending on how you set up your work in IntelliJ IDEA, you may have one to three projects.  (For example, you may have one project with 3 modules, or 3 projects, each with one module.)  In any case, be sure the Modules include the strings “Task1”, “Task2”, and “Android” in their names.
 
+Be sure you meet the [Documentation standards](https://canvas.cmu.edu/courses/27254/pages/documentation?module_item_id=5017769) given in the first week of class, especially including an Author comment with your name and AndrewID. Failing to include your name and AndrewID in each source file will result in losing 5 points.
+
 You should also have two writeup documents that you should name:
 * Project4Task1Writeup.pdf
 * Project4Task2Writeup.pdf
