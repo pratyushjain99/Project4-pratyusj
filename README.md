@@ -1,26 +1,28 @@
 # Project 4
-- **Assigned: Friday March 18**
-- **Task 0 Due: Friday March 25, 11:59pm**
-- **Task 1&2 Due: Friday April 8, 11:59pm**
+- **Assigned: Friday October 28**
+- **Task 1 Due: Sunday November 6, 11:59pm**
+- **Task 2 Due: Friday November 18, 11:59pm**
 
 ### Project Topics: Mobile to Cloud application
 
-This project has 3 tasks:
+This project has 2 tasks:
 - Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to use in your project.
-- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud_ and _Lab 8 - Android Lab_. You will design and build a simple mobile application that will communicate with a RESTful web service in the cloud.
-- Task 2 will add an operations logging and analysis function to your Task 1 web service.
+- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud_ and _Lab 8 - Android Lab_. You will design and build a distributed application consisting of a mobile application, a web service that communicates with a RESTful web service in the cloud, and a dashboard that displays logging and simple analytics about your application.
 
-### Task 0: Demonstrate using chosen 3rd Party API and MongoDB-as-a-Service
+### Task 1: Design your Application and Demonstrate Feasibility
 
-Research and choose a 3rd party API to use in Task 1 and 2.  Be sure to read Task 1 carefully to see how you will use the API, and to understand what APIs cannot be used.
-In detail, you should satisfy the following requirements:
+The goal of this task is to develop an idea for your application, and demonstrate the feasibility of using a 3rd party API and a database-as-a-service.
+
+Start by researching and choosing a 3rd party API to use in Task 2.  Be sure to read Task 1 carefully to see how you will use the API, and to understand what APIs cannot be used.
+
+To complete Task 1, you should satisfy the following requirements:
 
 **1. Fetch data from a 3rd party API**  
 a. Create a simple Java application that will make a request to the API and receive structured JSON or XML data.  
 b. Extract some piece of data and print it to the console.
 
 **2. Write and read data to MongoDB Atlas**  
-a. Read the Database section in Task 2 about creating and using mongoDB with Atlas.   
+a. Read the Database section below about creating and using mongoDB with Atlas.   
 b. Create a mongoDB database on Atlas.  
 c. Create (another) simple Java application that will:  
 - Prompt the user for a string.
@@ -36,28 +38,24 @@ d. A short description (1-3 sentences) of what your mobile application will do w
 e. A screenshot of the console output from section 1b.  
 f. A screenshot of the console output from section 2c.
 
-**4.	Submit your document (only) to Canvas as a pdf by the Task 0 deadline.**  
-Do not submit your code. It will be integrated into Task 2 and 3.  
+**4.	Submit your document (only) to Canvas as a pdf by the Task 1 deadline.**  
+Do not submit your code. It will be integrated into Task 2.
 
 **Grading:**  
-- Task 0 complete and submitted on time: Bonus 5 points
-- Task 1 does not use the API demonstrated in Task 0:  Penalty 10 points
+- Task 1 complete and submitted on time: Bonus 5 points
+- Task 2 does not use the API demonstrated in Task 1:  Penalty 10 points
 
-*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 0 on time, you get no bonus points.  If you have not committed to an API by submitting Task 0 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 0 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 0.  Grace days, if you have some remaining, can be used for Tasks 1 and 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown)).*
+*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 1 on time, you get no bonus points.  If you have not committed to an API by submitting Task 1 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 1 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 1.  Grace days, if you have some remaining, can be used for Tasks 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown)).*
 
-### Task 1: Mobile to Cloud Application
-Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
+### Task 2: Develop Your Distributed Application and Dashboard
+#### The Distributed Application
 
-The application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
+Your application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
 
-The following is a diagram of the components in Task 1.  
+The following is a diagram of the components for your this part of your application:
 ![Task 2 Diagram](docs/Project4-Diagram-Task1.png)
 
-Your web service deployed to Heroku should be a simple RESTful API similar to those you have developed in prior projects.  You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs, and [ProgrammableWeb](http://www.programmableweb.com/apis/directory) provides a directory.
-
-Another option is to use Amazon S3 as your API, and store datasets on it that your app can access to analyze, visualize, or otherwise use. In this case you must have **two** data sources that you combining in some way (e.g. neighborhood income data and police shooting data).  Each of these data sets must have over 200 records.  (This requirement is arbitrary, and meant to imply significant data sets, not just a few records.  If you have a great idea but your data source has fewer than 200 records write to Joe via Piazza.)
-
-If you use Amazon S3, make sure you have enough free credits (or paid credits) left for TAs to do grading.  
+Your web service should be deployed to Heroku and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs, and [ProgrammableWeb](http://www.programmableweb.com/apis/directory) provides a directory.
 
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
@@ -84,9 +82,9 @@ If you use Amazon S3, make sure you have enough free credits (or paid credits) l
 - YouTube
 - Zomato
 
-Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Task 2 dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
-In detail, your application should satisfy the following requirements:
+In detail, your distributed application should satisfy the following requirements:
 
 #### 1.	Implement a native Android application
 a.	Has at least three different kinds of Views in your Layout (TextView, EditText, ImageView, or anything that extends android.view.View). **In order to figure out if something is a View, find its API.  If it extends android.view.View then it is a View.**  
@@ -103,10 +101,10 @@ c.	Executes business logic appropriate to your application.  This includes fetch
 - -10 if you use a banned API
 - -10 if screen scrape instead of fetching XML or JSON via a published API
 
-**Use Servlets, not JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
-
 d.	Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.  
 -	-5 if more information is returned to the Android app that is needed, forcing the mobile app to do more computing than is necessary. The web service should select and pass on only the information that the mobile app needs.
+
+**Use Servlets, not JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
 
 Refer back to Lab 3 for instructions on pushing a web service to Heroku.
 
@@ -118,21 +116,16 @@ Your application should test for and handle gracefully:
  - Third-party API unavailable
  - Third-party API invalid data
 
-#### Writeup
-Because each student's mobile/cloud application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1a – 2d) above.  (You do not need to document _3. Handle error conditions_.) Your writeup will guide the TAs in grading your application.  See the provided example ([Project4Task1Writeup.pdf](https://github.com/CMU-Heinz-95702/Project4/blob/master/docs/Project4-WriteUp.pdf)) for the content and style of this document.
+#### Web Service Logging and Analysis Dashboard
 
-Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
+Now enhance your web service to add logging, analysis, and reporting capabilities. In other words, create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
 
-### Task 2: Web Service Logging and Analysis Dashboard
-
-For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
-
-The following is a diagram of the components in Task 2.
+The following is a diagram showing the dashboard components of your distributed application:
 ![Task 2 Diagram](docs/Project4-Diagram.png)
 
-**Note:**  Task 2 builds on Task 1, but for your own safety, you should not overwrite Task 1.  Rather, once you have Task 1 working, you should create a separate Task 2 project. In this way you will never lose the working Task 1 that you are required to submit. When deploying to Heroku, you should deploy Task 1 and Task 2 separately.  Heroku allows you do have multiple applications.  In this way, if Task 2 does not work for some reason, we still have Task 1 to grade.
 #### Logging data
-Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone.
+Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone. Be creative about what is useful for your application.
+
 You should NOT log data from interaction with the operations dashboard, only from the mobile phone.
 #### Database
 You should log your data persistently so that it is available across restarts of the application. For this task you should use MongoDB to store your logging data.   MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
@@ -143,29 +136,30 @@ The main MongoDB web site is https://www.mongodb.com. The site provides document
 
 *Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
 
-Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/cloud/atlas) is required because it has a free level of service that is adequate for your project.  
+Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/atlas/database) is required because it has a free level of service that is adequate for your project.  
 
 #### Setting up MongoDB Atlas
 In this project, you are going to us nosql-database-as-a-service with MongoDB Atlas. Information about MongoDB can be found here: https://www.mongodb.com/what-is-mongodb
 
 Getting started:
-1. Create your account. Go to https://www.mongodb.com/cloud/atlas and create your own free account.
-2. Choose Java as the preferred language.
-3. Choose the FREE shared cluster.
-4. Accept the default cloud provider and region and Create Cluster.
+1. Create your account. Go to https://www.mongodb.com/atlas/database and create your own free account.
+2. Answer the "Tell us a few things..." questions however you like, but include Java as the preferred language.
+3. Choose to create a FREE shared cluster.
+4. Accept the default settings and Create Cluster.
 5. In the Security Quickstart:
  - *How would you like to authenticate your connection?*  
  Authenticate using Username and Password.  Create a MongoDB user name and password (**only use letters and numbers to save yourself some hassle for encoding it later**) -  don't forget these.  The cluster takes a few minutes to provision, so be patient.
  - *Where would you like to connect from?*  
- Choose My Local Environment and add the IP address `0.0.0.0/0`. This means your DB will be open to the world, which is needed for the grading purposes. (You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.)
- - You can then Finish and Close
+ Choose My Local Environment, add the IP address `0.0.0.0/0`, and Add Entry. What this IP address means is that your DB will be open to the world, which is required for the grading purposes. (You can check this later on the Security tab, IP Whitelist. If it doesn't have that IP address, click on Edit.)
+ - Then Finish and Close.
+ - If a popup window invites you to set up "Termination Protection", just "Close".  (You don't need that for this project.)
 6. Connect to the cluster.  
-  a) Click on the 'Connect' button in the Sandbox section.  
-	b) For *Choose a connection method*; choose 'Connect with your application'. Then choose the Driver as 'Java', use version 4.3.  
-  c) Click on the Full Driver Example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll edit and paste into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
+  a) Click on the Connect button.  
+  b) Select the MongoDB Drivers option, then choose the Driver as Java, use version 4.3 or later.  
+  c) Select Include full driver code example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll edit and paste into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
   d) You will access this database in two ways:  
-	**For Task 0:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
-  **For Task 2:** Create your dashboard.  
+	**For Task 1:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
+  **For Task 1:** Create your dashboard.  
 
 The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
 
@@ -178,9 +172,16 @@ You can easily add the MongoDB Java Drivers to a project with Maven:
 <dependency>
    <groupId>org.mongodb</groupId>
    <artifactId>mongodb-driver-sync</artifactId>
-   <version>4.3.3</version>
+   <version>4.3.4</version>
 </dependency>
 ```
+---
+## STOPPED - STOPPED
+ - Check all Task 0, 1, 2 fixed
+ - Test drive the Mongode hints
+ - Is the TLS issue still a thing?  Is v1.3 needed?
+ - Add in working in pairs from my old project 6: self-selected pairs
+ ---
 
 #### Hints for connecting to MongoDB Atlas
 
