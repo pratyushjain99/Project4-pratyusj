@@ -3,17 +3,27 @@
 - **Task 1 Due: Sunday November 6, 11:59pm**
 - **Task 2 Due: Friday November 18, 11:59pm**
 
+Assigned by Joe Mertz  
+Please direct questions to Piazza, to a TA, or to Joe.
+
+## Working in Pairs option
+For this project, you can work in teams of two; if you prefer, you can work alone. If you work as a pair, you can fully collaborate and turn in only one solution for Task 1 and 2.  You cannot discuss your project with others beyond your teammate. If working as a team, you should only turn in the project to Canvas once under the ID of the teammate whose Andrew ID comes first sorted alphabetically.  You should not turn it in twice.
+
+The team can use grace days for Task 2 (only). Both students will be charged a grace day for each late day. If both students have not used all their grace days, then neither will be penalized if they turn in the assignment late.  However, if a student has already used the allowance, they will be penalized 10% per day late, beyond their available grace days.
+
+If you decide to work as a pair, you must do so for Task 1 and Task 2. There will be a short peer-review on Canvas that each team member must complete.
+
 ## Project Topics: Mobile to Cloud application
 
 This project has 2 tasks:
-- Task 0 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to use in your project.
-- Task 1 will build on _Lab 3 - Creating Containers and Deploying to the Cloud_ and _Lab 8 - Android Lab_. You will design and build a distributed application consisting of a mobile application, a web service that communicates with a RESTful web service in the cloud, and a dashboard that displays logging and simple analytics about your application.
+- Task 1 involves researching, selecting, and demonstrating that you can successfully use the technologies you plan to use in your project.
+- Task 2 will build on _Lab 3 - Creating Containers and Deploying to the Cloud_ and _Lab 8 - Android Lab_. You will design and build a distributed application consisting of a mobile application, a web service that communicates with a RESTful web service in the cloud, and a dashboard that displays logging and simple analytics about your application.
 
 ## Task 1: Demonstrate Project Feasibility
 
 The goal of this task is to develop an idea for your application, and demonstrate the feasibility of using a 3rd party API and a database-as-a-service.
 
-Start by researching and choosing a 3rd party API to use in Task 2.  Be sure to read Task 1 carefully to see how you will use the API, and to understand what APIs cannot be used.
+Start by researching and choosing a 3rd party API to use in Task 2.  Be sure to read Task 2 carefully to see how you will use the API, and to understand what APIs cannot be used.
 
 To complete Task 1, you should satisfy the following requirements:
 
@@ -163,31 +173,21 @@ Because each student's distributed application will be different, you are respon
 Alternatively, instead of a document, you may submit a narrated screencast that includes the same information that would be in the writeup.
 
 ### Demos
-The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class!
+The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class.  Those who do so get a small prize!
 
 ### Questions
-If you have questions, please post them to the course Piazza and the TAs and instructors will respond.
+If you have a question, please post them to the course Piazza, ask a TA, or direct to Joe.
 
 ### Submission Summary
-You will have two server apps (Task 1, Task 2), and one Android app to submit. Depending on how you set up your work in IntelliJ IDEA, you may have one to three projects.  (For example, you may have one project with 3 modules, or 3 projects, each with one module.)  In any case, be sure the Modules include the strings “Task1”, “Task2”, and “Android” in their names.
+You will have one web service app, one Android app, and a WriteUp document to submit. Be sure each is named to be obvious what it is.
 
-Be sure you meet the [Documentation standards](https://canvas.cmu.edu/courses/27254/pages/documentation?module_item_id=5017769) given in the first week of class, especially including an Author comment with your name and AndrewID. Failing to include your name and AndrewID in each source file will result in losing 5 points.
-
-You should also have two writeup documents that you should name:
-* Project4Task1Writeup.pdf
-* Project4Task2Writeup.pdf
-
-If you submit screencasts, use similar names (e.g. Project4Task1Screencast).
-
-You will have no separate screenshot directories for this project.
+Be sure you meet the [Documentation standards](https://canvas.cmu.edu/courses/30219/pages/documentation?module_item_id=5196591) given in the first week of class, especially including an Author comment with your name and AndrewID. Failing to include your name and AndrewID in each source file will result in losing 5 points.
 
 For each IntelliJ IDEA project, “File->Export To Zip File…”. You must export in this way and NOT just zip the project folders.
 
-Now you should have one to three .zip files and two writeup documents
+Create a new empty folder **named with your Andrew id** (very important). Put your web service zip, your Android project zip, and your WriteUp pdf in that folder and zip it.
 
-Create a new empty folder **named with your Andrew id** (very important). Put all files mentioned above in to the new folder you created.  Zip that folder.
-
-Now you should have only one .zip file named with your Andrew id. Submit that single .zip file to Canvas.
+Now you should have only one .zip file named with your AndrewID.zip. Submit that single .zip file to Canvas.
 
 ---
 ### MongoDB
@@ -222,8 +222,8 @@ Getting started:
   b) Select the MongoDB Drivers option, then choose the Driver as Java, use version 4.3 or later.  
   c) Select Include full driver code example. Click Copy to copy that code stub. For now, save that code in a file; later, you'll edit and paste into your application to connect to your MongoDB instance, but don't forget to replace your <password> with your database user‘s credentials (Note that when entering your password, any special characters are URL encoded; that's why a simple password is better here).  
   d) You will access this database in two ways:  
-	**For Task 1:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 0 above.  
-  **For Task 1:** Create your dashboard.  
+	**For Task 1:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 1 above.  
+  **For Task 2:** In your Web Service Logging and Analysis Dashboard
 
 The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
 
