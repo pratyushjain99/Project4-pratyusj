@@ -78,6 +78,7 @@ Your web service should be deployed to Heroku and provide a simple RESTful API s
 - Eventful
 - Flickr (for we have already done that)
 - Google Maps (unless you also use a 2nd API to get info to put on the map)
+- IsEvenAPI.xyz
 - Last.fm
 - Merriam-Webster Dictionary
 - NASA Astronomy Picture of the Day
