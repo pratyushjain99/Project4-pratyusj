@@ -6,7 +6,7 @@
 Assigned by Joe Mertz  
 Please direct questions to Piazza, to a TA, or to Joe.
 
-Three notes:
+**Three status notes:**
  - Like the other projects, you must do this project alone. 
  - Additional information about deploying your web service to the cloud will be provided before Task 1 is due (and you have two weeks for Task 2).
  - The images are accurate, but mislabled "Heroku" instead of GitHub Codespaces.
