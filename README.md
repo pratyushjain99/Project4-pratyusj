@@ -6,6 +6,11 @@
 Assigned by Joe Mertz  
 Please direct questions to Piazza, to a TA, or to Joe.
 
+Three notes:
+ - Like the other projects, you must do this project alone. 
+ - Additional information about deploying your web service to the cloud will be provided before Task 1 is due (and you have two weeks for Task 2).
+ - The images are accurate, but mislabled "Heroku" instead of GitHub Codespaces.
+
 ## Project Topics: Mobile to Cloud application
 
 This project has 2 tasks:
@@ -58,7 +63,7 @@ Your application must be of your own creative design. (We will use software simi
 The following is a diagram of the components for your this part of your application:
 ![Task 2 Diagram](docs/Project4-Diagram-Task1.png)
 
-Your web service should be deployed to GitHub Codespaces (like in Lab 3) and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) is a good place to start.
+Your web service should be deployed to the cloud and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) is a good place to start.
 
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
@@ -86,7 +91,7 @@ Your web service should be deployed to GitHub Codespaces (like in Lab 3) and pro
 - YouTube
 - Zomato
 
-Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to GitHub Codespaces. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to the cloud. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
 In detail, your distributed application should satisfy the following requirements:
 
@@ -99,7 +104,7 @@ d.	Receives and parses an XML or JSON formatted reply from your web service
 e.	Displays new information to the user  
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
-##### 2.	Implement a web service, deployed to GitHub Codespaces
+##### 2.	Implement a web service
 a.	Implement a simple (can be a single path) API.  
 b.	Receives an HTTP request from the native Android application  
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
@@ -111,7 +116,7 @@ d.	Replies to the Android application with an XML or JSON formatted response. Th
 
 **Use Servlets, not JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
 
-Refer back to Lab 3 for instructions on deploying a web service to GitHub Codespaces.
+**Updated guidelines for deploying your web service to GitHub Codespaces will be provided before the Task 1 deadline.**
 
 ##### 3. Handle error conditions
 Your application should test for and handle gracefully:
@@ -160,6 +165,8 @@ c. The dashboard displays **formatted** full logs.
 
 #### 7. Deploy the web service to GitHub Codespaces  
 
+**Information on deploying to GitHub Codespaces will be provided by the Task 1 deadline.**
+
 ### Writeup
 
 Because each student's distributed application will be different, you are responsible for making it clear to the TAs how you have met these requirements, and it is in your best interest to do so. You will lose points if you don't make it clear how you have met the requirements. Therefore, you must create a document describing how you have met each of the requirements (1 – 7) above (you do **not** need to document _3. Handle error conditions_.) Your writeup will guide the TAs in grading your application.  See the provided example ([Project4Task1Writeup.pdf](https://github.com/CMU-Heinz-95702/Project4/blob/master/docs/Project4-WriteUp.pdf)) for the content and style of this document.
@@ -173,15 +180,8 @@ The TAs will identify exemplar projects that are unique in some way and nominate
 If you have a question, please post them to the course Piazza, ask a TA, or direct to Joe.
 
 ### Submission Summary
-You will have one web service app, one Android app, and a WriteUp document to submit. Be sure each is named to be obvious what it is.
 
-Be sure you meet the [Documentation standards](https://canvas.cmu.edu/courses/30219/pages/documentation?module_item_id=5196591) given in the first week of class, especially including an Author comment with your name and AndrewID. Failing to include your name and AndrewID in each source file will result in losing 5 points.
-
-For each IntelliJ IDEA project, “File->Export To Zip File…”. You must export in this way and NOT just zip the project folders.
-
-Create a new empty folder **named with your Andrew id** (very important). Put your web service zip, your Android project zip, and your WriteUp pdf in that folder and zip it.
-
-Now you should have only one .zip file named with your AndrewID.zip. Submit that single .zip file to Canvas.
+**Submission instructions for Task 2 will be provided by the Task 1 deadline.**
 
 ---
 ### MongoDB
@@ -191,7 +191,7 @@ The main MongoDB web site is https://www.mongodb.com. The site provides document
 
 *Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
 
-Because your web service will be running in GitHub Codespaces, you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/atlas/database) is required because it has a free level of service that is adequate for your project.  
+Because your web service will be running in the cloud, you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/atlas/database) is required because it has a free level of service that is adequate for your project.  
 
 **Please read carefully…**
 This project will challenge you to do a lot of research to understand enough MongoDB to create a simple database, add a collection, and insert, update, and find documents in that collection.  This is very much like you will need to do regularly in industry. Code examples are provided on the MongoDB site, and elsewhere. **As long as you include comments as to their source, you can use them in your code.**  If we search for a snippet of your code find it somewhere, and you have not attributed it to where you found it, that will be cheating and reason for receiving a failing grade in the course.  Of course, the bulk of your code that is unique to your application should be your own and not copied from anywhere.
@@ -219,7 +219,7 @@ Getting started:
 	**For Task 1:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 1 above.  
   **For Task 2:** In your Web Service Logging and Analysis Dashboard
 
-The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from GitHub Codespaces.
+The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from your web service in the cloud.
 
 Info about the MongoDB Java driver and sample code can be found here:  
 https://docs.mongodb.com/drivers/java/sync/v4.3/quick-start/
