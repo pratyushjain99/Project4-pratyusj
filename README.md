@@ -1,17 +1,10 @@
 # Project 4
-- **Assigned: Friday October 28**
-- **Task 1 Due: Sunday November 6, 11:59pm**
-- **Task 2 Due: Friday November 18, 11:59pm**
+- **Assigned: Friday March 17**
+- **Task 1 Due: Friday March 24, 11:59pm**
+- **Task 2 Due: Friday April 7, 11:59pm**
 
 Assigned by Joe Mertz  
 Please direct questions to Piazza, to a TA, or to Joe.
-
-## Working in Pairs option
-For this project, you can work in teams of two; if you prefer, you can work alone. If you work as a pair, you can fully collaborate and turn in only one solution for Task 1 and 2.  You cannot discuss your project with others beyond your teammate. If working as a team, you should only turn in the project to Canvas once under the ID of the teammate whose Andrew ID comes first sorted alphabetically.  You should not turn it in twice.
-
-The team can use grace days for Task 2 (only). Both students will be charged a grace day for each late day. If both students have not used all their grace days, then neither will be penalized if they turn in the assignment late.  However, if a student has already used the allowance, they will be penalized 10% per day late, beyond their available grace days.
-
-If you decide to work as a pair, you must do so for Task 1 and Task 2. There will be a short peer-review on Canvas that each team member must complete.
 
 ## Project Topics: Mobile to Cloud application
 
@@ -65,7 +58,7 @@ Your application must be of your own creative design. (We will use software simi
 The following is a diagram of the components for your this part of your application:
 ![Task 2 Diagram](docs/Project4-Diagram-Task1.png)
 
-Your web service should be deployed to Heroku and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; [ProgrammableWeb](http://www.programmableweb.com/apis/directory) and the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) are good resources.
+Your web service should be deployed to GitHub Codespaces (like in Lab 3) and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) is a good place to start.
 
 **Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
 
@@ -93,7 +86,7 @@ Your web service should be deployed to Heroku and provide a simple RESTful API s
 - YouTube
 - Zomato
 
-Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to Heroku. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
+Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to GitHub Codespaces. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
 In detail, your distributed application should satisfy the following requirements:
 
@@ -106,7 +99,7 @@ d.	Receives and parses an XML or JSON formatted reply from your web service
 e.	Displays new information to the user  
 f.	Is repeatable (I.e. the user can repeatedly reuse the application without restarting it.)
 
-##### 2.	Implement a web service, deployed to Heroku
+##### 2.	Implement a web service, deployed to GitHub Codespaces
 a.	Implement a simple (can be a single path) API.  
 b.	Receives an HTTP request from the native Android application  
 c.	Executes business logic appropriate to your application.  This includes fetching XML or JSON information from some 3rd party API and processing the response.
@@ -118,7 +111,7 @@ d.	Replies to the Android application with an XML or JSON formatted response. Th
 
 **Use Servlets, not JAX-RS, for your web services.** Students have had issues deploying web applications built with JAX-RS to Docker Containers and a solution has not yet been found.
 
-Refer back to Lab 3 for instructions on pushing a web service to Heroku.
+Refer back to Lab 3 for instructions on deploying a web service to GitHub Codespaces.
 
 ##### 3. Handle error conditions
 Your application should test for and handle gracefully:
@@ -165,7 +158,7 @@ a. A unique URL addresses a web interface dashboard for the web service.
 b. The dashboard displays at least 3 interesting operations analytics.  
 c. The dashboard displays **formatted** full logs.  
 
-#### 7. Deploy the web service to Heroku  
+#### 7. Deploy the web service to GitHub Codespaces  
 
 ### Writeup
 
@@ -198,7 +191,7 @@ The main MongoDB web site is https://www.mongodb.com. The site provides document
 
 *Mongo* (without the DB) is a command line shell application for interacting with a MongoDB database.  It is useful for doing simple operations on the database such as finding all the current contents or deleting them.
 
-Because your web service will be running in the Heroku PaaS (or more specifically, Container-as-a-Service), you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/atlas/database) is required because it has a free level of service that is adequate for your project.  
+Because your web service will be running in GitHub Codespaces, you can’t run your database on your laptop.  Rather, you should use a MongoDB-as-a-Service to host your database in the cloud. Atlas (https://www.mongodb.com/atlas/database) is required because it has a free level of service that is adequate for your project.  
 
 **Please read carefully…**
 This project will challenge you to do a lot of research to understand enough MongoDB to create a simple database, add a collection, and insert, update, and find documents in that collection.  This is very much like you will need to do regularly in industry. Code examples are provided on the MongoDB site, and elsewhere. **As long as you include comments as to their source, you can use them in your code.**  If we search for a snippet of your code find it somewhere, and you have not attributed it to where you found it, that will be cheating and reason for receiving a failing grade in the course.  Of course, the bulk of your code that is unique to your application should be your own and not copied from anywhere.
@@ -226,7 +219,7 @@ Getting started:
 	**For Task 1:** Create a simple Java application to demonstrate reading and writing to the database as described in Task 1 above.  
   **For Task 2:** In your Web Service Logging and Analysis Dashboard
 
-The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from Heroku.
+The sample code in the Quick Start guide shows how to access the database. You can access this cloud-based MongoDB database from your laptop as well as from GitHub Codespaces.
 
 Info about the MongoDB Java driver and sample code can be found here:  
 https://docs.mongodb.com/drivers/java/sync/v4.3/quick-start/
@@ -244,12 +237,6 @@ You can easily add the MongoDB Java Drivers to a project with Maven:
 #### Hints for connecting to MongoDB Atlas
 
 Use a password that uses only letters and numbers so you don't have to deal with encoding it.
-
-When Heroku communicates with MongoDB Atlas, it requires TLSv1.2.  To enable this, edit your Dockerfile and add the following lines near the top of the file with the other ENV commands. (But not the first line in the file.)
-```
-# Use TLSv1.2 for communication between Heroku and MongoDB
-ENV JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.2"
-```
 
 The MongoDB connection string that Atlas provides is of the form:
 ```
