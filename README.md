@@ -168,7 +168,7 @@ c. The dashboard displays **formatted** full logs.
 In order to deploy your web application to the cloud using Github Cloudspaces, first make sure you have the basics working.  
 
 a. Accept the Github Classroom Assignment that you have been given the URL for.  You will find a repository with:
- - A `.devconsole.json` and a `Dockerfile` which define how to create a Docker container, build a suitable software stack, and deploy the ROOT.war web application.
+ - A `.devcontainer.json` and a `Dockerfile` which define how to create a Docker container, build a suitable software stack, and deploy the ROOT.war web application.
  - A ROOT.war file which, like in Lab 3, contains a web application that will deployed in the container.  This is a simple "Hello World!" application.
  - An identical copy of this `README.md`  
 
@@ -200,7 +200,6 @@ If you have a question, please post them to the course Piazza, ask a TA, or dire
 
 ### Submission Summary
 
-ssd
 
 ---
 ### MongoDB
