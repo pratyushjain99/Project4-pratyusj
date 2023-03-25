@@ -184,9 +184,7 @@ f. By default, the URL in (d) requires you to be authenticated with Github. To t
 
 g. Copy the URL and paste into an Incognito Chrome window to confirm that the Hello World web app can be reached without authentication.
 
-h. To deploy your own web service, create a ROOT.war like you did in Lab 3, 
-
-**Information on deploying to GitHub Codespaces will be provided by the Task 1 deadline.**
+h. To deploy your own web service, create a ROOT.war like you did in Lab 3, upload or push the ROOT.war to your repository, and create a Codespace as has just been described.
 
 ### Writeup
 
@@ -202,7 +200,7 @@ If you have a question, please post them to the course Piazza, ask a TA, or dire
 
 ### Submission Summary
 
-**Submission instructions for Task 2 will be provided by the Task 1 deadline.**
+ssd
 
 ---
 ### MongoDB
