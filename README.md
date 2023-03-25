@@ -172,9 +172,19 @@ a. Accept the Github Classroom Assignment that you have been given the URL for. 
  - A ROOT.war file which, like in Lab 3, contains a web application that will deployed in the container.  This is a simple "Hello World!" application.
  - An identical copy of this `README.md`  
 
-b. Click the green <> Code dropdown button, select the Codespaces tab, then click on "Create codspace on master".
+b. Click the green <> Code dropdown button, select the Codespaces tab, then click on "Create codespace on master".
 
+c. Once the Codespace is running, the Terminal tab will show that Catalina (the Servlet container) is running.  You should also see a "1" next to the Ports tab.  Click on the Ports tab and you should see that port 8080 has been made available.  
 
+d. Mouse over the Local address item of the port 8080 line and you will find three icons.  The leftmost is to copy the URL of your deployed application, the middle one (a globe) is to launch that URL in a browser.  Clicking on the globe is a quick way to test your web service in a browswer.  The copy is useful to use the URL in your Android App.
+
+e. Click on the globe to confirm that the Hello World servlet is working.
+
+f. By default, the URL in (d) requires you to be authenticated with Github. To test in a browser, that is fine, but when accessing your web service from your Android app, the Android app will not be authenticated.  Therefore you must make the port visibility "Public".  To do this, right or control click on the word "Private" in the Visibility column, and change Port Visibility to "Public".  You will now be able to access the web service from your Android App or from an unauthenticated browser.
+
+g. Copy the URL and paste into an Incognito Chrome window to confirm that the Hello World web app can be reached without authentication.
+
+h. To deploy your own web service, create a ROOT.war like you did in Lab 3, 
 
 **Information on deploying to GitHub Codespaces will be provided by the Task 1 deadline.**
 
