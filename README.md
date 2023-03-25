@@ -8,8 +8,8 @@ Please direct questions to Piazza, to a TA, or to Joe.
 
 **Three status notes:**
  - Like the other projects, you must do this project alone. 
- - Additional information about deploying your web service to the cloud will be provided before Task 1 is due (and you have two weeks for Task 2).
- - The images are accurate, but mislabled "Heroku" instead of GitHub Codespaces.
+ - The updated information on how to deploy Task 2 to the cloud and how to submit Task 2 for grading has been added below.
+  - The images have been relabled to reflect using GitHub Codespaces.
 
 ## Project Topics: Mobile to Cloud application
 
@@ -164,6 +164,17 @@ b. The dashboard displays at least 3 interesting operations analytics.
 c. The dashboard displays **formatted** full logs.  
 
 #### 7. Deploy the web service to GitHub Codespaces  
+
+In order to deploy your web application to the cloud using Github Cloudspaces, first make sure you have the basics working.  
+
+a. Accept the Github Classroom Assignment that you have been given the URL for.  You will find a repository with:
+ - A `.devconsole.json` and a `Dockerfile` which define how to create a Docker container, build a suitable software stack, and deploy the ROOT.war web application.
+ - A ROOT.war file which, like in Lab 3, contains a web application that will deployed in the container.  This is a simple "Hello World!" application.
+ - An identical copy of this `README.md`  
+
+b. Click the green <> Code dropdown button, select the Codespaces tab, then click on "Create codspace on master".
+
+
 
 **Information on deploying to GitHub Codespaces will be provided by the Task 1 deadline.**
 
