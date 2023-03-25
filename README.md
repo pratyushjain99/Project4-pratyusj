@@ -9,7 +9,7 @@ Please direct questions to Piazza, to a TA, or to Joe.
 **Three status notes:**
  - Like the other projects, you must do this project alone. 
  - The updated information on how to deploy Task 2 to the cloud and how to submit Task 2 for grading has been added below.
-  - The images have been relabled to reflect using GitHub Codespaces.
+  - The images have been re-labled to reflect using GitHub Codespaces.
 
 ## Project Topics: Mobile to Cloud application
 
@@ -200,6 +200,20 @@ If you have a question, please post them to the course Piazza, ask a TA, or dire
 
 ### Submission Summary
 
+When you are done, you will have one web service, one Android app, and one writeup pdf document.
+
+Be sure you meet the Documentation standards given in the first week of class, especially including an Author comment with your name and AndrewID in each source code file. Failing to include your name and AndrewID in each source file will result in losing 5 points.
+
+All the following files should be left in your Github assignment repository.
+
+a. ROOT.war - This is your working web service.  
+b. Your IntelliJ IDEA project zip file.  Create this by using “File->Export To Zip File…”. You must export in this way and NOT just zip the project folders.  Your zip file should be clearly named to indicate this is your web service.  
+c. Your Android Studio project folder as a single zip file.  Your zip file should be clearly named to indicate this is your android app.  
+d. Your writeup document as a .pdf.  This file should be clearly named to indicate it is your writeup file.
+
+**You should only push / upload your writeup file as the very last step of submitting your project.  Once a TA sees that you have a writeup file, they will consider your project submitted and available for grading.**
+
+You do **not** have to submit anything to Canvas for Project 4 Task 2.
 
 ---
 ### MongoDB
