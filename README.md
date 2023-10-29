@@ -1,13 +1,13 @@
 # Project 4
-- **Assigned: Friday March 17**
-- **Task 1 Due: Friday March 24, 11:59pm**
-- **Task 2 Due: Friday April 7, 11:59pm**
+- **Assigned: Friday October 27**
+- **Task 1 Due: Friday November 3, 11:59pm**
+- **Task 2 Due: Friday November 17, 11:59pm**
 
-Assigned by Joe Mertz  
-Please direct questions to Piazza, to a TA, or to Joe.
+Assigned by Marty Barrett
+Please direct questions to Piazza. Only email a TA or Marty if absolutely needed.
 
 **Three status notes:**
- - Like the other projects, you must do this project alone. 
+ - Like the other projects, you must do this project alone.
  - The updated information on how to deploy Task 2 to the cloud and how to submit Task 2 for grading has been added below.
   - The images have been re-labled to reflect using GitHub Codespaces.
 
@@ -19,14 +19,14 @@ This project has 2 tasks:
 
 ## Task 1: Demonstrate Project Feasibility
 
-The goal of this task is to develop an idea for your application, and demonstrate the feasibility of using a 3rd party API and a database-as-a-service.
+The goal of this task is to develop an idea for your application and to demonstrate the feasibility of using a 3rd party API and a database-as-a-service.
 
-Start by researching and choosing a 3rd party API to use in Task 2.  Be sure to read Task 2 carefully to see how you will use the API, and to understand what APIs cannot be used.
+**Start by researching and choosing a 3rd party API to use in Task 2.**  Be sure to read Task 2 carefully to see how you will use the API, and to understand what APIs cannot be used - see the "Banned APIs" section.
 
 To complete Task 1, you should satisfy the following requirements:
 
 **1. Fetch data from a 3rd party API**  
-a. Create a simple Java application that will make a request to the API and receive structured JSON or XML data.  
+a. Create a simple Java application that will make a request to the API that you'll use in Task 2 and receive structured JSON or XML data.  
 b. Extract some piece of data and print it to the console.
 
 **2. Write and read data to MongoDB Atlas**  
@@ -40,7 +40,7 @@ c. Create (another) simple Java application that will:
 
 **3. Create a document that contains:**  
 a. Your name and Andrew ID  
-b. The name of the API (e.g. Flickr)  
+b. The name of the API (e.g. Flickr - but not actually Flickr: see the list of sites and topics on the Banned API's list below).
 c. The URL of the API documentation (e.g. https://www.flickr.com/services/api/).  
 d. A short description (1-3 sentences) of what your mobile application will do with the information from the API (e.g. My mobile app will prompt the user for a string and then search Flickr using their API to display an interesting picture tagged with that string.)  
 e. A screenshot of the console output from section 1b.  
@@ -53,28 +53,21 @@ Do not submit your code. It will be integrated into Task 2.
 - Task 1 complete and submitted on time: Bonus 5 points
 - Task 2 does not use the API demonstrated in Task 1:  Penalty 10 points
 
-*(Small print to head off lots of questions on Piazza:  If you don’t submit Task 1 on time, you get no bonus points.  If you have not committed to an API by submitting Task 1 by the deadline, you can’t be penalized for not using that API.  If you do not use the API submitted in Task 1 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points. Grace days cannot be used for Task 1.  Grace days, if you have some remaining, can be used for Tasks 2. No purchase necessary. Limit one winner per household. Offer void in NJ, TX, and [Jaynestown](https://en.wikipedia.org/wiki/Jaynestown)).*
+If you don’t submit Task 1 on time, you get no bonus points.
 
-## Task 2: Distributed Application and Dashboard
-### The Distributed Application
+If you have not committed to an API by submitting Task 1 by the deadline, you can’t be penalized for not using that API.  
 
-Your application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
+If you do not use the API submitted in Task 1 on time, you still get the 5 bonus points, but are penalized 10 points, resulting in a net penalty of 5 points.
 
-The following is a diagram of the components for your this part of your application:
-![Task 2 Diagram](docs/Project4-Diagram-Partial.png)
-
-Your web service should be deployed to the cloud and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) is a good place to start.
-
-**Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
-
-**Be sure your API is from a reputable source.  Your API still needs to be available when the TAs go to grade your project.** Make sure you do not base your project on an API built by a 7th grade student…
+Grace days **cannot** be used for Task 1.  Grace days, if you have some remaining, can be used for Tasks 2.
 
 **Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
 - Agify.io
 - Alpha Vantage
+- baseball - do not use any site related to the game of baseball (we've already done that)
 - Dog.ceo
 - Eventful
-- Flickr (for we have already done that)
+- Flickr (we've have already done that)
 - Google Maps (unless you also use a 2nd API to get info to put on the map)
 - IsEvenAPI.xyz
 - Last.fm
@@ -90,6 +83,24 @@ Your web service should be deployed to the cloud and provide a simple RESTful AP
 -	Yelp
 - YouTube
 - Zomato
+
+## Task 2: Distributed Application and Dashboard
+### The Distributed Application
+
+Your application must be of your own creative design. (We will use software similarity detection software to identify those who do not.) It can be simple, but should fetch information from a 3rd party source and do something of at least marginal value.  For example, we have assigned projects that generate hash values, implement clickers, or manage a blockchain.  Your application should do something similarly simple but useful (but you should not reuse our ideas or the ideas of your peers!).
+
+The following is a diagram of the components for your this part of your application:
+![Task 2 Diagram](docs/Project4-Diagram-Partial.png)
+
+Your web service should be deployed to the cloud and provide a simple RESTful API similar to those you have developed in prior projects. You do NOT have to implement all HTTP methods, only those that make sense for your application. Your web service must fetch information from some 3rd party API.  In Project 1 you experimented with screen scraping, therefore that is not allowed in this project.  Rather, you must find an API that provides data via XML or JSON.  It is easy and can be fun to search for APIs; the [GitHub Public APIs repository](https://github.com/public-apis/public-apis) is a good place to start. But again, see the Banned API's list below.
+
+**See the Banned APIs section.** Do not use any of the banned API's. Some students forget this if they change API's after Task 1 (and don't get the bonus, either).
+
+**Use APIs that require authentication with caution.** Many APIs will require you get a key (e.g. Flickr, which you used in the Android lab, required an API key).  This is ok. But APIs that require authentication via OAuth or other schemes add a lot of work. Experiment ahead of time, but if you are brave, go ahead…
+
+**Do not use APIs that require a fee.** The TA's are poorly paid.
+
+**Be sure your API is from a reputable source.  Your API still needs to be available when the TAs go to grade your project.** Make sure you do not base your project on an API built by a 7th grade student…
 
 Users will access your application via a native Android application. **You do not need to have a browser-based interface for your application** (only for the Dashboard). The Android application should communicate with your web service deployed to the cloud. Your web service is where the business logic for your application should be implemented (including fetching information from the 3rd party API).
 
@@ -137,6 +148,7 @@ The following is a diagram showing the dashboard components of your distributed 
 Your web service should keep track (i.e. log) data regarding its use.  You can decide what information would be useful to track for your web application, but you should track at least 6 pieces of information that would be useful for including in a dashboard for your application. It should include information about the request from the mobile phone, information about the request and reply to the 3rd party API, and information about the reply to the mobile phone.  Information can include such parameters as what kind of model of phone has made the request, parameters included in the request specific to your application, timestamps for when requests are received, requests sent to the 3rd party API, and the data sent in the reply back to the phone. Be creative about what is useful for your application.
 
 You should NOT log data from interaction with the operations dashboard, only from the mobile phone.
+
 #### Storing logs
 You should store your log data persistently so that it is available across restarts of the application. For this task you should use MongoDB to store your log data. MongoDB is a noSQL database that is easy to use.  By incorporating it into your web service you will gain experience using a noSQL database, and experience doing CRUD operations programmatically from a Java program to a database.
 
@@ -146,10 +158,10 @@ See the MongoDB section below for more information on MongoDB, how to set it up,
 The purpose of logging data to the database is to be able to create an operations dashboard for your web service.  This dashboard should be web page interface for use from a desktop or laptop browser (not a mobile device).
 
 The dashboard should display two types of data:
-1. Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
-2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable. **(Three points will be lost if they are displayed as JSON nor XML.)**  
+3.1. Operations analytics – display at least 3 interesting operations analytics from your web service.  You should choose analytics that are relevant to your specific web service. Examples for InterestingPicture might be top 10 picture search terms, average Flickr search latency, or the top 5 Android phone models making requests.
+3.2. Logs – display the data logs being stored for each mobile phone user interaction with your web service. The display of each log entry can be simply formatted and should be easily readable. **(Three points will be lost if they are displayed as JSON or XML.)**  
 
-You will likely find HTML tables useful for formatting tabular information on a web page.  And there are plenty of examples of embedding data in tables with JSP on the web.   No frameworks are necessary for this, just < 20 lines of JSP (i.e. mixed HTML and Java). You may use a client-side framework if you like (e.g. Twitter Bootstrap).
+3.3. You will likely find HTML tables useful for formatting tabular information on a web page.  And there are plenty of examples of embedding data in tables with JSP on the web.   No frameworks are necessary for this, just < 20 lines of JSP (i.e. mixed HTML and Java). You may use a client-side framework if you like (e.g. Twitter Bootstrap). Don't just use the json or xml format, use a table.
 
 In detail, your dashboard should satisfy the additional requirements:
 
@@ -161,7 +173,7 @@ The web service can connect, store, and retrieve information from a MongoDB data
 #### 6.	Display operations analytics and full logs on a web-based dashboard
 a. A unique URL addresses a web interface dashboard for the web service.  
 b. The dashboard displays at least 3 interesting operations analytics.  
-c. The dashboard displays **formatted** full logs.  
+c. The dashboard displays **formatted** full logs.
 
 #### 7. Deploy the web service to GitHub Codespaces  
 
@@ -196,7 +208,7 @@ Alternatively, instead of a document, you may submit a narrated screencast that 
 The TAs will identify exemplar projects that are unique in some way and nominate them to be demonstrated in class.  Those who do so get a small prize!
 
 ### Questions
-If you have a question, please post them to the course Piazza, ask a TA, or direct to Joe.
+If you have a question, please post them to the course Piazza, ask a TA, or direct to Marty.
 
 ### Submission Summary
 
@@ -256,15 +268,21 @@ The sample code in the Quick Start guide shows how to access the database. You c
 Info about the MongoDB Java driver and sample code can be found here:  
 https://docs.mongodb.com/drivers/java/sync/v4.3/quick-start/
 
+The Usage Examples contains several code examples:
+https://www.mongodb.com/docs/drivers/java/sync/current/usage-examples/
 
-You can easily add the MongoDB Java Drivers to a project with Maven:
+
+You can easily add the MongoDB Java Drivers to a project with Maven by adding these dependency lines to your pom.xml file inside the dependencies section (only add the first and last lines of the following if there isn't already a dependencies section):
 ```
-<dependency>
-   <groupId>org.mongodb</groupId>
-   <artifactId>mongodb-driver-sync</artifactId>
-   <version>4.3.4</version>
-</dependency>
+<dependencies>
+   <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver-sync</artifactId>
+      <version>4.3.4</version>
+   </dependency>
+</dependencies>
 ```
+If you're seeing red in the pom.xml file, the, open the Maven panel in IntelliJ (it usually hides on the right margin) and click the "Reload all maven dependencies" button in the top-left corner (the circular arrows icon). Any red-highlighted Java code problems can be handled in the usual way by hovering your cursor over the code.
 
 #### Hints for connecting to MongoDB Atlas
 
