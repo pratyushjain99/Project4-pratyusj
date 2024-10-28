@@ -1,7 +1,7 @@
 # Project 4
-- **Assigned: Friday March 15**
-- **Task 1 Due: Friday March 22, 11:59pm**
-- **Task 2 Due: Friday April 5, 11:59pm**
+- **Assigned: Monday October 28**
+- **Task 1 Due: Monday November 4, 11:59pm**
+- **Task 2 Due: Monday November 18, 11:59pm**
 
 Assigned by Marty Barrett
 Please direct questions to Piazza. Only email a TA or Marty if absolutely needed.
@@ -62,7 +62,7 @@ If you do not use the API submitted in Task 1 on time, you still get the 5 bonus
 Grace days **cannot** be used for Task 1.  Grace days, if you have some remaining, can be used for Tasks 2.
 
 **Banned APIs:** There are a number of APIs that have been used too often and are no longer interesting in this class.  Therefore, you **cannot** use any of the following:
-- anything related to Project 1 (U.S. state information, U.S. Census data)
+- anything related to Project 1 (dogs, dog breeds, dog data, dog pictures)
 - Agify.io
 - Alpha Vantage
 - Dog.ceo
