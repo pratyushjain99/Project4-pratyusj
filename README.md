@@ -225,7 +225,7 @@ d. Your writeup document as a .pdf.  This file should be clearly named to indica
 
 **You should only push / upload your writeup file as the very last step of submitting your project.  Once a TA sees that you have a writeup file, they will consider your project submitted and available for grading.**
 
-You do **not** have to submit anything to Canvas for Project 4 Task 2.
+You do **not** have to submit anything to Canvas for Project 4 Task 1.
 
 ---
 ### MongoDB
